@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML E CSS</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="lib/dialog.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">Tag dialog e Efeitos de animações</h1>
+        <p class="text-center"><strong>Nota:</strong> A tag dialog não é compatível com o navegador Safari</p>
+    </header>
+    <main>
+        <!-- Tag dialog com o efeitos de transições-->
+        <section>
+            <!-- Para manipulação da tag, é necessário passar o id da mesma e a classe de animação escolhida -->
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-up')">modal slide up</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-down')">modal slide down</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-left')">modal slide left</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-right')">modal slide right</button>
+
+            <dialog id="dialog-modal" class="">
+                <dialog-header class="bg-primary">
+                    <h2>Title</h2>
+                    <button class="close-dialog btn btn-close"></button>
+                </dialog-header>
+
+                <dialog-body>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, quam. Dolores alias
+                        voluptatibus
+                        commodi quaerat eveniet repellat, voluptatum provident eum molestiae aspernatur cumque delectus
+                        nobis reprehenderit suscipit sed quas fugit.
+                    </p>
+                </dialog-body>
+
+                <dialog-footer>
+                    <button class="close-dialog btn btn-outline-danger">Fechar</button>
+                    <button type="submit" class="btn btn-outline-primary">Ok</button>
+                </dialog-footer>
+            </dialog>
+        </section>
+    </main>
+    <footer></footer>
+
+    <!-- JS -->
+    <script src="lib/dialog.js"></script>
+</body>
+
+</html>

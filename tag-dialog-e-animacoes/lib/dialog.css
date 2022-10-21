@@ -1,0 +1,222 @@
+/* GLOBAL___________________________________________________________________________________________________________________________________*/
+/* biblioteca de efeitos para animação______________________________________________________________________________*/
+/* fade-in: aumenta a opacidade ________________________________*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* fade-out: diminui a opacidade _______________________________*/
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* slide-up: desliza para cima _________________________________*/
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* slide-down: desliza para baixo ______________________________*/
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* slide-left: desliza para a esquerda _________________________*/
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* slide-right: desliza para a direita _________________________*/
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* biblioteca de classes para animação_______________________________________________________________________________*/
+/* slide-up_____________________________________________*/
+.slide-up[open] {
+    animation: slide-up 700ms forwards, fade-in 700ms forwards;
+}
+
+.slide-up[open]::backdrop {
+    animation: fade-in 700ms forwards;
+}
+
+.slide-up[closing] {
+    inset: 0;
+    pointer-events: none;
+    animation: fade-out 500ms forwards;
+}
+
+.slide-up[closing]::backdrop {
+    animation: fade-out 500ms forwards;
+}
+
+/* slide-down_____________________________________________*/
+.slide-down[open] {
+    animation: slide-down 700ms forwards, fade-in 700ms forwards;
+}
+
+.slide-down[open]::backdrop {
+    animation: fade-in 700ms forwards;
+}
+
+.slide-down[closing] {
+    inset: 0;
+    pointer-events: none;
+    animation: fade-out 500ms forwards;
+}
+
+.slide-down[closing]::backdrop {
+    animation: fade-out 500ms forwards;
+}
+
+/* slide-left_____________________________________________*/
+.slide-left[open] {
+    animation: slide-left 700ms forwards, fade-in 700ms forwards;
+}
+
+.slide-left[open]::backdrop {
+    animation: fade-in 700ms forwards;
+}
+
+.slide-left[closing] {
+    inset: 0;
+    pointer-events: none;
+    animation: fade-out 500ms forwards;
+}
+
+.slide-left[closing]::backdrop {
+    animation: fade-out 500ms forwards;
+}
+
+/* slide-right_____________________________________________*/
+.slide-right[open] {
+    animation: slide-right 700ms forwards, fade-in 700ms forwards;
+}
+
+.slide-right[open]::backdrop {
+    animation: fade-in 700ms forwards;
+}
+
+.slide-right[closing] {
+    inset: 0;
+    pointer-events: none;
+    animation: fade-out 500ms forwards;
+}
+
+.slide-right[closing]::backdrop {
+    animation: fade-out 500ms forwards;
+}
+
+/* BODY ____________________________________________________________________________________________________________________________________*/
+    /* header __________________________________________________________________________________________________*/
+    header{
+        padding: 20px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    /* main ____________________________________________________________________________________________________*/
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /* section _________________________________________________________________________*/
+        section {
+            width: 60%;
+            margin: 20px;
+        }
+
+            /* global dialog _______________________________________________*/
+            dialog {
+                padding: 0px;
+                border: none;
+                max-width: 50%;
+                overflow: hidden;
+                border-radius: 5px;
+                box-shadow: -3px 3px 7px 0px #0000005c;
+            }
+
+            dialog::backdrop{
+                background: rgb(0 0 0 / 0.5);
+            }
+
+            dialog button {
+                margin: 5px;
+            }
+
+                dialog dialog-header,
+                dialog dialog-body,
+                dialog dialog-footer {
+                    padding: 10px;
+                }
+
+                /* dialog-header____________________*/
+                dialog dialog-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                    dialog dialog-header h2 {
+                        color: white;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+
+                /* dialog-body_______________________*/
+                dialog dialog-body p {
+                    margin: 10px;
+                    text-indent: 20px;
+                    text-align: justify;
+                }
+
+                /* dialog-footer______________________*/
+                dialog dialog-footer {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
+
+                    dialog dialog-footer button {
+                        font-weight: 500 !important;
+                    }
+
+    /* footer __________________________________________________________________________________________________*/
