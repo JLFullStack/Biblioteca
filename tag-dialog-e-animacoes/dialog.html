@@ -23,12 +23,6 @@
     <main>
         <!-- Tag dialog com o efeitos de transições-->
         <section>
-            <!-- Para manipulação da tag, é necessário passar o id da mesma e a classe de animação escolhida -->
-            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-up')">modal slide up</button>
-            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-down')">modal slide down</button>
-            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-left')">modal slide left</button>
-            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-right')">modal slide right</button>
-
             <dialog id="dialog-modal" class="">
                 <dialog-header class="bg-primary">
                     <h2>Title</h2>
@@ -49,6 +43,20 @@
                     <button type="submit" class="btn btn-outline-primary">Ok</button>
                 </dialog-footer>
             </dialog>
+
+            <!-- Para manipulação da tag, é necessário passar como parâmetro o id da mesma e a classe de animação escolhida -->
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'fade')">fade</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'zoom-fade')">zoom and fade</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'zoom-explosion')">zoom and explosion</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'zoom-explosion-decrease')">zoom, explosion and decrease</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'unfold-zoom')">unfold and zoom</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-up-fade')">slide up and fade</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-up-scale')">slide up and scale</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-up-overlap')">slide up and overlap</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-down-fade')">slide down and fade</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-down-remove-down')">slide down and remove down</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-left-fade')">slide left and fade</button>
+            <button class="open-dialog btn btn-primary" onclick="dialogManipulation('dialog-modal' , 'slide-right-fade')">slide right and fade</button>
         </section>
     </main>
     <footer></footer>
