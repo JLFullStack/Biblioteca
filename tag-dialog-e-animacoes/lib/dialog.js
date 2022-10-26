@@ -1,7 +1,7 @@
 function dialogManipulation(id, effect) {
     const
         body = document.querySelector("body"),
-        dialog = document.querySelector("#"+id),
+        dialog = document.querySelector("#" + id),
         closeDialog = document.querySelectorAll("button.close-dialog");
 
     //tratamento para o efeito de escala
@@ -126,9 +126,7 @@ function dialogManipulation(id, effect) {
                 }, 700);
             }
         });
-    } 
-
-    else{
+    } else {
         //adiciona o efeito de transição escolhido
         dialog.classList.add(effect);
 

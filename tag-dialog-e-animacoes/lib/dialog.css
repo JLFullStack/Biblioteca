@@ -212,7 +212,7 @@
     }
 }
 
-/* zoom-in: diminui o zoom ______________________________________*/
+/* zoom-in: diminui o zoom _____________________________________*/
 @keyframes zoom-in {
     0% {
         transform: scale(0);
@@ -223,7 +223,7 @@
     }
 }
 
-/* increase-scale: aumenta a escala_____________________________ */
+/* increase-scale: aumenta a escala_____________________________*/
 @keyframes increase-scale {
     0% {
         transform: scale(.85);
@@ -234,7 +234,7 @@
     }
 }
 
-/* decrease-scale: diminui a escala______________________________*/
+/* decrease-scale: diminui a escala_____________________________*/
 @keyframes decrease-scale {
     0% {
         transform: scale(1);
@@ -245,7 +245,7 @@
     }
 }
 
-/* remove-up: remove para cima _________________________________ */
+/* remove-up: remove para cima _________________________________*/
 @keyframes remove-up {
     0% {
         transform: translateY(0px);
@@ -256,7 +256,7 @@
     }
 }
 
-/* remove-down: remove para baixo ___________________________ */
+/* remove-down: remove para baixo ______________________________*/
 @keyframes remove-down {
     0% {
         transform: translateY(0px);
@@ -267,7 +267,7 @@
     }
 }
 
-/* remove-left: remove para a esquerda _______________________*/
+/* remove-left: remove para a esquerda _________________________*/
 @keyframes remove-left {
     0% {
         transform: translateX(0px);
@@ -278,7 +278,7 @@
     }
 }
 
-/* remove-right: remove para a direita ________________________*/
+/* remove-right: remove para a direita _________________________*/
 @keyframes remove-right {
     0% {
         transform: translateX(0px);
@@ -289,7 +289,7 @@
     }
 }
 
-/* increase-explosion: aumenta a explosão _____________________*/
+/* increase-explosion: aumenta a explosão ______________________*/
 @keyframes increase-explosion {
     0% {
         transform: scale(1);
@@ -306,7 +306,7 @@
     }
 }
 
-/* decrease-explosion: diminui a explosão _____________________*/
+/* decrease-explosion: diminui a explosão ______________________*/
 @keyframes decrease-explosion {
     0% {
         transform: scale(2);
@@ -316,6 +316,36 @@
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* runner-in-road: corredor na estrada _________________________*/
+@keyframes runner-in-road {
+    0% {
+        transform: translateX(-1500px) skewX(30deg) scaleX(1.3);
+    }
+
+    70% {
+        transform: translateX(30px) skewX(0deg) scaleX(.9);
+    }
+
+    100% {
+        transform: translateX(0px) skewX(0deg) scaleX(1);
+    }
+}
+
+/* runner-out-road: corredor fora da estrada ___________________*/
+@keyframes runner-out-road {
+    0% {
+        transform: translateX(0px) skewX(0deg) scaleX(1);
+    }
+
+    30% {
+        transform: translateX(-30px) skewX(-5deg) scaleX(.9);
+    }
+
+    100% {
+        transform: translateX(1500px) skewX(30deg) scaleX(1.3);
     }
 }
 
@@ -341,28 +371,28 @@
     animation: remove-up.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
 }
 
-/* remove-down _______________________________________________________________*
+/* remove-down _____________________________________________________________*
 * remove para baixo
 */
 .remove-down{
     animation: remove-down.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
 }
 
-/* remove-left _______________________________________________________________*
+/* remove-left _____________________________________________________________*
 * remove para a esquerda
 */
 .remove-left{
     animation: remove-left.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
 }
 
-/* remove-right _______________________________________________________________*
+/* remove-right ____________________________________________________________*
 * remove para a direita
 */
 .remove-right{
     animation: remove-right.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
 }
 
-/* increase-explosion ____________________________________________________*
+/* increase-explosion ______________________________________________________*
 * aumenta a explosão
 */
 .increase-explosion{
@@ -370,7 +400,7 @@
     animation:increase-explosion .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-/* decrease-explosion ____________________________________________________*
+/* decrease-explosion ______________________________________________________*
 * diminui a explosão
 */
 .decrease-explosion{
@@ -393,7 +423,7 @@
     animation: fade-out 500ms forwards;
 }
 
-/*zoom and fade____________________________________________________________*
+/*zoom and fade_____________________________________________________________*
 * mexe no zoom e na opacidade
 */
 .zoom-fade-in,
@@ -413,7 +443,7 @@
         animation: fade-out 500ms forwards;
     }
 
-/* zoom and explosion  ___________________________________________________*
+/* zoom and explosion  _____________________________________________________*
 * aumenta o zoom, explode a body, explode a tag e reestrutura a body
 */
 .zoom-explosion {
@@ -435,7 +465,7 @@
             animation: fade-out 500ms forwards;
         }
 
-/* zoom, explosion and decrease __________________________________________*
+/* zoom, explosion and decrease ____________________________________________*
 * aumenta o zoom, explode a body e diminui o zoom
 */
 .zoom-explosion-decrease {
@@ -458,7 +488,7 @@
             animation: fade-out 500ms forwards;
         }
 
-/* unfold and zoom_________________________________________________________*
+/* unfold and zoom__________________________________________________________*
 * desdobra a backdrop e mexe no zoom
 */
 .unfold-zoom[open] {
@@ -477,7 +507,7 @@
         animation:unfold-out 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 1200ms forwards;
     }
 
-/* slide up and fade___________________________________________________*
+/* slide up and fade________________________________________________________*
 * desliza para cima, ao centro, e mexe na opacidade 
 */
 .slide-up-fade {
@@ -545,7 +575,7 @@
             animation: remove-down.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
         }
 
-/* slide down and fade__________________________________________________*
+/* slide down and fade______________________________________________________*
 * desliza para baixo, ao centro, e mexe na opacidade 
 */
 .slide-down-fade {
@@ -568,7 +598,7 @@
             animation: fade-out 500ms forwards;
         }
 
-/* slide down and remove down __________________________________________*
+/* slide down and remove down ______________________________________________*
 * desliza para baixo, ao centro, e remove para baixo 
 */
 .slide-down-remove-down {
@@ -590,7 +620,7 @@
             animation: fade-out 500ms forwards;        
         }
 
-/* slide left and fade___________________________________________________*
+/* slide left and fade______________________________________________________*
 * desliza para a esquerda, ao centro, e mexe na opacidade 
 */
 .slide-left-fade {
@@ -613,7 +643,7 @@
             animation: fade-out 500ms forwards;
         }
 
-/* slide right and fade___________________________________________________*
+/* slide right and fade_____________________________________________________*
 * desliza para a direita, ao centro e mexe na opacidade 
 */
 .slide-right-fade {
@@ -636,7 +666,7 @@
             animation: fade-out 500ms forwards;
         }
 
-/* run-right___________________________________________________*
+/* run-right________________________________________________________________*
 * corre para a direita
 */
 .run-right {
@@ -644,205 +674,18 @@
 }
 
     .run-right[open] {
-        animation: slide-right 500ms forwards, fade-in 500ms forwards, roadRunnerIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        animation: slide-right 500ms forwards, fade-in 500ms forwards, runner-in-road .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
     }
         .run-right[open]::backdrop {
             animation: fade-in 500ms forwards;
         }
 
     .run-right[closing] {
-        animation: remove-right .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards, roadRunnerOut .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        animation: remove-right .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards, runner-out-road .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
     }
         .run-right[closing]::backdrop {
             animation: fade-out 700ms forwards;
         }
-
-
-
-@keyframes roadRunnerIn {
-    0% {
-        transform: translateX(-1500px) skewX(30deg) scaleX(1.3);
-    }
-
-    70% {
-        transform: translateX(30px) skewX(0deg) scaleX(.9);
-    }
-
-    100% {
-        transform: translateX(0px) skewX(0deg) scaleX(1);
-    }
-}
-
-@keyframes roadRunnerOut {
-    0% {
-        transform: translateX(0px) skewX(0deg) scaleX(1);
-    }
-
-    30% {
-        transform: translateX(-30px) skewX(-5deg) scaleX(.9);
-    }
-
-    100% {
-        transform: translateX(1500px) skewX(30deg) scaleX(1.3);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-@keyframes blowUpModal {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes blowUpModalTwo {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
-}
-
-@keyframes sketchIn {
-    0% {
-        stroke-dashoffset: 778;
-    }
-
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes sketchOut {
-    0% {
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        stroke-dashoffset: 778;
-    }
-}
-
-@keyframes modalFadeIn {
-    0% {
-        background-color: transparent;
-    }
-
-    100% {
-        background-color: white;
-    }
-}
-
-@keyframes modalFadeOut {
-    0% {
-        background-color: white;
-    }
-
-    100% {
-        background-color: transparent;
-    }
-}
-
-@keyframes modalContentFadeIn {
-    0% {
-        opacity: 0;
-        top: -20px;
-    }
-
-    100% {
-        opacity: 1;
-        top: 0;
-    }
-}
-
-@keyframes modalContentFadeOut {
-    0% {
-        opacity: 1;
-        top: 0px;
-    }
-
-    100% {
-        opacity: 0;
-        top: -20px;
-    }
-}
-
-@keyframes bondJamesBond {
-    0% {
-        transform: translateX(1000px);
-    }
-
-    80% {
-        transform: translateX(0px);
-        border-radius: 75px;
-        height: 75px;
-        width: 75px;
-    }
-
-    90% {
-        border-radius: 3px;
-        height: 182px;
-        width: 247px;
-    }
-
-    100% {
-        border-radius: 3px;
-        height: 162px;
-        width: 227px;
-    }
-}
-
-@keyframes killShot {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(300px) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeToRed {
-    0% {
-        background-color: rgba(black, .6);
-    }
-
-    100% {
-        background-color: rgba(red, .8);
-    }
-}
-
-@keyframes slowFade {
-    0% {
-        opacity: 1;
-    }
-
-    99.9% {
-        opacity: 0;
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0);
-    }
-}
 
 
 
