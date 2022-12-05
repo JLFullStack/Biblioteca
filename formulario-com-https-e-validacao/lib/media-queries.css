@@ -15,40 +15,75 @@
         height: 90vh;
 
         min-width: 300px;
-        min-height: 500px;
+        min-height: 550px;
+
+        transition: width .3s;
+        transition: height .3s;
     }
 
-    dialog-header {
+    dialog dialog-header {
         height: 10%;
     }
 
-        dialog-header #title {
-            font-size: 1.3em !important;
-        }
+    dialog dialog-header #title {
+        font-size: 1.3em !important;
+    }
 
-    dialog-body {
+    dialog dialog-body {
         justify-content: space-evenly;
         height: 75%;
     }
 
-        dialog-body input {
-            margin: 5px;
-            height: 40px;
-            width: 95%;
-        }
+    dialog dialog-body input {
+        margin: 5px;
+        height: 40px;
+        width: 95%;
+    }
 
-    dialog-body input#nome {
+    dialog dialog-body input#nome {
         margin-top: 10px;
     }
 
-        dialog-footer {
-            justify-content: space-around;
-            height: 15%;
-        }
+    dialog dialog-footer {
+        justify-content: space-around;
+        height: 15%;
+    }
 
-        dialog-footer button{
-            padding: 10px 30px 10px 30px !important;
-        }
+    dialog dialog-footer button {
+        margin: 15px;
+        padding: 10px 30px 10px 30px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+    dialog {
+        width: 95%;
+        height: 95%;
+
+        min-width: 500px;
+        min-height: 300px;
+
+        transition: width .3s;
+        transition: height .3s;
+    }
+
+    dialog dialog-header {
+        height: 15%;
+    }
+
+    dialog dialog-body {
+        height: 70%;
+    }
+
+    dialog dialog-footer {
+        height: 15%;
+    }
+
+    dialog dialog-footer button {
+        margin: 15px;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
 }
 
 /* CELULAR _________________________________________________________________________________________________________________________________ */
