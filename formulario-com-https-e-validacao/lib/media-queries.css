@@ -13,6 +13,9 @@
     dialog {
         width: 90vh;
         height: 90vh;
+
+        min-width: 300px;
+        min-height: 500px;
     }
 
     dialog-header {
@@ -25,7 +28,7 @@
 
     dialog-body {
         justify-content: space-evenly;
-        height: 80%;
+        height: 75%;
     }
 
         dialog-body input {
@@ -40,7 +43,7 @@
 
         dialog-footer {
             justify-content: space-around;
-            height: 10%;
+            height: 15%;
         }
 
         dialog-footer button{
