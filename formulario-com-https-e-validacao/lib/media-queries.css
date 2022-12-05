@@ -7,18 +7,17 @@
     * telas grandes : acima de 1200px
 --> */
 
-
-/* TELAS PEQUENAS __________________________________________________________________________________________________________________________ */
-@media only screen and (max-width: 600px) {
+/* CELULAR _________________________________________________________________________________________________________________________________ */
+@media only screen and (max-width: 768px) {
     dialog {
-        width: 90vh;
-        height: 90vh;
+        width: 90%;
+        height: 90%;
 
         min-width: 300px;
         min-height: 550px;
 
-        transition: width .3s;
-        transition: height .3s;
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
     }
 
     dialog dialog-header {
@@ -55,7 +54,101 @@
     }
 }
 
-@media only screen and (max-width: 600px) and (orientation: landscape) {
+/* TABLET __________________________________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    dialog {
+        width: 90%;
+        height: 90%;
+
+        min-width: 300px;
+        min-height: 550px;
+
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
+    }
+
+    dialog dialog-header {
+        height: 10%;
+    }
+
+    dialog dialog-header #title {
+        font-size: 1.3em !important;
+    }
+
+    dialog dialog-body {
+        justify-content: space-evenly;
+        height: 75%;
+    }
+
+    dialog dialog-body input {
+        margin: 5px;
+        height: 40px;
+        width: 95%;
+    }
+
+    dialog dialog-body input#nome {
+        margin-top: 10px;
+    }
+
+    dialog dialog-footer {
+        justify-content: space-around;
+        height: 15%;
+    }
+
+    dialog dialog-footer button {
+        margin: 15px;
+        padding: 10px 30px 10px 30px !important;
+    }
+}
+
+/* DESKTOP E TELAS MAIORES __________________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+    dialog {
+        width: 90%;
+        height: 90%;
+
+        min-width: 300px;
+        min-height: 550px;
+
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
+    }
+
+    dialog dialog-header {
+        height: 10%;
+    }
+
+    dialog dialog-header #title {
+        font-size: 1.3em !important;
+    }
+
+    dialog dialog-body {
+        justify-content: space-evenly;
+        height: 75%;
+    }
+
+    dialog dialog-body input {
+        margin: 5px;
+        height: 40px;
+        width: 95%;
+    }
+
+    dialog dialog-body input#nome {
+        margin-top: 10px;
+    }
+
+    dialog dialog-footer {
+        justify-content: space-around;
+        height: 15%;
+    }
+
+    dialog dialog-footer button {
+        margin: 15px;
+        padding: 10px 30px 10px 30px !important;
+    }
+}
+
+@media only screen and (orientation: landscape){
     dialog {
         width: 95%;
         height: 95%;
@@ -63,8 +156,8 @@
         min-width: 500px;
         min-height: 300px;
 
-        transition: width .3s;
-        transition: height .3s;
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
     }
 
     dialog dialog-header {
@@ -84,24 +177,4 @@
         padding-top: 5px !important;
         padding-bottom: 5px !important;
     }
-}
-
-/* CELULAR _________________________________________________________________________________________________________________________________ */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-    dialog {}
-}
-
-/* TABLET __________________________________________________________________________________________________________________________________ */
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-    dialog {}
-}
-
-/* DESKTOP _________________________________________________________________________________________________________________________________ */
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    dialog {}
-}
-
-/* TELAS GRANDES ____________________________________________________________________________________________________________________________ */
-@media only screen and (min-width: 1200px) {
-    dialog {}
 }
