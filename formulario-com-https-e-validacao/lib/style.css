@@ -1,17 +1,17 @@
-/* header __________________________________________________________________________________________________ */
+/* HEADER __________________________________________________________________________________________________________________________________ */
 header {
     padding: 20px;
     margin: 0px 0px 20px 0px;
 }
 
-/* main ____________________________________________________________________________________________________*/
+/* MAIN _____________________________________________________________________________________________________________________________________*/
 main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* section _________________________________________________________________________*/
+/* Section _____________________________________________________________________________________________*/
 section {
     display: flex;
     flex-direction: column;
@@ -21,23 +21,27 @@ section {
     margin: 20px;
 }
 
-    section form {
-        padding: 20px 0px 20px 0px;
-    }
+section form {
+    padding: 20px 0px 20px 0px;
+}
 
-/* global dialog _______________________________________________*/
+/* dialog ________________________________________________________________*/
 dialog {
+    width: 90%;
+    height: 90%;
     padding: 0px;
     border: none;
-    overflow: hidden;
     border-radius: 5px;
     box-shadow: -3px 3px 7px 0px #0000005c;
     background-color: #363573fc;
+
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
 }
 
-    dialog::backdrop {
-        background: rgb(0 0 0 / 0.5);
-    }
+dialog::backdrop {
+    background: rgb(0 0 0 / 0.5);
+}
 
 /* dialog-header____________________*/
 dialog dialog-header {
@@ -46,52 +50,66 @@ dialog dialog-header {
     justify-content: center;
 
     padding: 10px;
-
+    height: 10%;
     background-color: #262157;
 }
 
-    dialog dialog-header #title {
-        color: white;
-        font-size: 1.5em;
-        font-weight: bold;
-    }
+dialog dialog-header #title {
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
 
 /* dialog-body_______________________*/
 dialog dialog-body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 
     text-indent: 20px;
     text-align: justify;
-
+    height: 70%;
     background-color: #363573fc;
 }
 
-    dialog dialog-body input {
-        border: none;
-        border-radius: 5px;
+dialog dialog-body input {
+    text-indent: 20px;
+    text-align: justify;
 
-        text-indent: 20px;
-        text-align: justify;
-    }
+    height: 40px;
+    width: 95%;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+}
+
+dialog dialog-body input#nome {
+    margin-top: 10px;
+}
 
 /* dialog-footer______________________*/
 dialog dialog-footer {
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: space-around;
 
+    height: 20%;
     background-color: #262157;
+
+    transition: flex-direction .3s;
+    transition-timing-function: ease;
 }
 
-    dialog dialog-footer button {
-        margin: 5px;
-        font-weight: 500 !important;
-    }
-
-/* footer __________________________________________________________________________________________________*/
-
+dialog dialog-footer button {
+    margin: 5px;
+    font-weight: 500 !important;
+    padding: 10px 30px !important;
+}
 
 /* ANIMAÇÃO DE FORMULÁRIO____________________________________________________________________________________________________________________ */
 

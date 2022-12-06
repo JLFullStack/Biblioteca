@@ -8,107 +8,60 @@
 --> */
 
 /* CELULAR _________________________________________________________________________________________________________________________________ */
-@media only screen and (max-width: 768px) {
-    dialog {
-        width: 90%;
-        height: 90%;
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    dialog dialog-footer {
+        flex-direction: column-reverse;
 
-        min-width: 300px;
-        min-height: 550px;
-
-        transition: width .3s, height .3s;
+        transition: flex-direction .3s;
         transition-timing-function: ease;
     }
 
-    dialog dialog-header {
-        height: 10%;
-    }
-
-    dialog dialog-header #title {
-        font-size: 1.3em !important;
-    }
-
-    dialog dialog-body {
-        justify-content: space-evenly;
-        height: 75%;
-    }
-
-    dialog dialog-body input {
-        margin: 5px;
-        height: 40px;
-        width: 95%;
-    }
-
-    dialog dialog-body input#nome {
-        margin-top: 10px;
-    }
-
-    dialog dialog-footer {
-        justify-content: space-around;
-        height: 15%;
-    }
-
     dialog dialog-footer button {
-        margin: 15px;
-        padding: 10px 30px 10px 30px !important;
+        width: 200px;
+        height: 40px;
+
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
     }
 }
 
 /* TABLET __________________________________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     dialog {
-        width: 90%;
+        width: 80%;
         height: 90%;
-
-        min-width: 300px;
-        min-height: 550px;
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
 
         transition: width .3s, height .3s;
         transition-timing-function: ease;
     }
 
-    dialog dialog-header {
-        height: 10%;
-    }
-
-    dialog dialog-header #title {
-        font-size: 1.3em !important;
-    }
-
-    dialog dialog-body {
-        justify-content: space-evenly;
-        height: 75%;
-    }
-
     dialog dialog-body input {
-        margin: 5px;
-        height: 40px;
-        width: 95%;
-    }
-
-    dialog dialog-body input#nome {
-        margin-top: 10px;
-    }
-
-    dialog dialog-footer {
-        justify-content: space-around;
-        height: 15%;
+        height: 60px;
+        width: 75%;
     }
 
     dialog dialog-footer button {
-        margin: 15px;
-        padding: 10px 30px 10px 30px !important;
+        padding: 10px 30px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+    dialog {
+        width: 60%;
+        height: 80%;
+
+        transition: width .3s, height .3s;
+        transition-timing-function: ease;
     }
 }
 
 /* DESKTOP E TELAS MAIORES __________________________________________________________________________________________________________________ */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 993px) {
     dialog {
-        width: 90%;
-        height: 90%;
-
-        min-width: 300px;
-        min-height: 550px;
+        width: 800px;
+        height: 600px;
 
         transition: width .3s, height .3s;
         transition-timing-function: ease;
@@ -116,65 +69,29 @@
 
     dialog dialog-header {
         height: 10%;
-    }
-
-    dialog dialog-header #title {
-        font-size: 1.3em !important;
+        font-size: 1.2em;
     }
 
     dialog dialog-body {
-        justify-content: space-evenly;
         height: 75%;
     }
 
     dialog dialog-body input {
-        margin: 5px;
-        height: 40px;
+        height: 60px;
         width: 95%;
-    }
-
-    dialog dialog-body input#nome {
-        margin-top: 10px;
+        font-size: 1.1em;
     }
 
     dialog dialog-footer {
-        justify-content: space-around;
         height: 15%;
     }
 
     dialog dialog-footer button {
-        margin: 15px;
-        padding: 10px 30px 10px 30px !important;
-    }
-}
-
-@media only screen and (orientation: landscape){
-    dialog {
-        width: 95%;
-        height: 95%;
-
-        min-width: 500px;
-        min-height: 300px;
+        font-size: 1.2em !important;
+        width: 150px;
+        height: 50px;
 
         transition: width .3s, height .3s;
         transition-timing-function: ease;
-    }
-
-    dialog dialog-header {
-        height: 15%;
-    }
-
-    dialog dialog-body {
-        height: 70%;
-    }
-
-    dialog dialog-footer {
-        height: 15%;
-    }
-
-    dialog dialog-footer button {
-        margin: 15px;
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
     }
 }
