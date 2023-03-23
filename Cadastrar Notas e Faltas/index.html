@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Educação</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="lib/css/style.css" />
+</head>
+
+<body>
+    <button onclick="abrirBoletim()" class="btn btn-info">Abrir Boletim</button>
+
+    <!--Modal cadNotas-->
+    <div id="boletimModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title" id="boletimModalLabel"><strong>CADASTRAR NOTAS</strong></h5>
+                    </div>
+                    <div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container table-responsive">
+
+                        <table id="boletim">
+                            <tbody>
+                                <tr>
+                                    <td class="text-right" colspan="5">Ano letivo:&nbsp;
+                                        <span class="boletim-ano-letivo">2022</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="5">Aluno(a):&nbsp;
+                                        <span class="boletim-nome-aluno">JOÃO NINGUÉM</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="5">Ensino:&nbsp;
+                                        <span class="boletim-nome-aluno">EJA</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3">Ano/turma:&nbsp;
+                                        <span class="boletim-ano-turma">1ºA</span>
+                                    </td>
+
+                                    <td colspan="2">Prof:&nbsp;
+                                        <span class="boletim-nome-prof">Alguém</span>
+                                    </td>
+                                </tr>
+
+                                <tr class="historico-geral-superior">
+                                    <td rowspan="2">DISCIPLINA</td>
+                                    <td class="trim-1">1º Trim.</td>
+                                    <td class="trim-2">2º Trim.</td>
+                                    <td class="trim-3" colspan="2">3º Trim.</td>
+                                </tr>
+
+                                <tr class="historico-geral-lateral">
+                                    <td class="trim-1">Notas</td>
+                                    <td class="trim-2">Notas</td>
+                                    <td class="trim-3">Notas</td>
+                                    <td class="trim-3">Conselho</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">L. Portuguesa</td>
+
+                                    <td class="valor">
+                                        <input type="text" class="nota-pt" maxlength="4"
+                                            oninput="limitarCampoDasNotas(this)" />
+                                    </td>
+
+                                    <td class="valor">
+                                        <input type="text" class="nota-pt" maxlength="4"
+                                            oninput="limitarCampoDasNotas(this)" />
+                                    </td>
+
+                                    <td class="valor">
+                                        <input type="text" class="nota-pt" maxlength="4"
+                                            oninput="limitarCampoDasNotas(this)" />
+                                    </td>
+
+                                    <td class="valor">
+                                        <input type="text" class="nota-pt" maxlength="4"
+                                            oninput="limitarCampoDasNotas(this)" />
+                                    </td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Matemática</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">História</td>
+                                    <td class="valor">6</td>
+                                    <td class="valor">10</td>
+                                    <td class="valor">4</td>
+                                    <td class="valor">2</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Geografia</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Ciências</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Ed. Física</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Arte</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="historico-disciplina">
+                                    <td class="titulo">Inglês</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                    <td class="valor">0</td>
+                                </tr>
+
+                                <tr class="resultado-final-superior">
+                                    <td rowspan="3" colspan="3"></td>
+                                    <td colspan="3">Resultado Final:</td>
+                                </tr>
+
+                                <tr class="resultado-final-inferior">
+                                    <td class="media-final" colspan="2">
+                                        <span class="msg-resultado-final"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="form-actions no-color">
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancelar
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-sm btn-print">Imprimir
+                            <span class="glyphicon glyphicon-print"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-sm btn-email">E-mail
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-sm btn-plan">Planilha
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-sm btn-pdf">PDF
+                            <span class="glyphicon glyphicon-save-file"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-sm btn-cad" onclick="cadastrarNotas()">Cadastrar
+                            <span class="glyphicon glyphicon-save"></span>
+                        </button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <script src="lib/js/script.js"></script>
+</body>
+
+</html>

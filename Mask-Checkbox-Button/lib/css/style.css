@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    src: url(../../../../common/assets/fonts/Roboto/Roboto-Black.ttf) format('truetype'),
+        url(../../../../common/assets/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+:root {
+    --fonte-destaque: 'Roboto', serif;
+    --fonte-titulo: 'lucida sans unicode', 'lucida grande', lucida, sans-serif;
+    --fonte-conteudo: 'Varela Round', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-destaque);
+}
+
+
+/* slide-left: desliza para a esquerda _________________________*/
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* slide-right: desliza para a direita _________________________*/
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.btn-masked-checkbox {
+    position: relative;
+    border-radius: 3em;
+    padding: 5px 2px 8px 2px;
+    margin: 0px;
+    width: max-content;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.btn-masked-checkbox input {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.btn-masked-checkbox input[type="checkbox"]:focus {
+    outline: none;
+}
+
+.btn-masked-checkbox input:checked~span:last-of-type {
+    color: #FFF;
+    padding: 7px 15px;
+    background-color: #5587bd;
+    box-shadow: rgb(0 0 0 / 20%) -2px 0px 2px 0px;
+    animation: slide-right 200ms forwards;
+}
+
+.btn-masked-checkbox input:not(:checked)~span:first-of-type {
+    color: #FFF;
+    padding: 7px 15px;
+    background-color: #cf403c;
+    box-shadow: rgb(0 0 0 / 20%) 2px 1px 3px 0px;
+    animation: slide-left 200ms forwards;
+}
+
+.btn-masked-checkbox span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px 15px;
+    transition: all 100ms ease-out 0s;
+    user-select: none;
+    border-radius: 3em;
+    color: rgba(51, 51, 51, 0.6);
+    background: transparent;
+}

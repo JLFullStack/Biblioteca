@@ -1,0 +1,100 @@
+.boletim-ano-letivo {
+    font-weight: bold;
+}
+
+.boletim-nome-aluno {
+    font-weight: bold;
+}
+
+#boletim {
+    border: 1px solid #333;
+    width: 100%;
+    font-size: smaller;
+    border-radius: 3px !important;
+    margin-top: 1%;
+}
+
+#boletim tbody td {
+    padding: 5px;
+}
+
+.trim-1,
+.trim-2,
+.trim-3,
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    text-align: center;
+}
+
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    font-weight: bold;
+}
+
+.trim-1,
+.trim-2,
+.trim-3 {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.titulo {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    border-bottom: 1px solid #9E9E9E;
+    border-right: 1px solid #9E9E9E;
+}
+
+.borda-tipo-1 {
+    border-left: 1px solid #333;
+    border-right: 1px solid #E0E0E0;
+}
+
+.borda-tipo-2 {
+    border-right: 1px solid #333;
+}
+
+.borda-tipo-3 {
+    border-right: 1px solid #E0E0E0;
+}
+
+.nota-azul {
+    color: #1565C0;
+}
+
+.nota-vermelha {
+    color: #C62828;
+}
+
+.boletim-rodape {
+    background-color: #ECEFF1;
+}
+
+.historico-geral.superior td:nth-child(1) {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.historico-geral.superior td {
+    border-top: 1px solid #333;
+}
+
+.historico-geral.superior td:nth-child(2) {
+    border-left: 1px solid #333;
+    border-bottom-style: hidden;
+}
+
+.historico-geral.superior td:nth-child(3),
+.historico-geral.superior td:nth-child(4) {
+    border-bottom-style: hidden;
+}
+
+.historico-geral.lateral td:nth-child(1) {
+    border-left: 1px solid #333;
+}

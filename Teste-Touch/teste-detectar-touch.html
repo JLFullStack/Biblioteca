@@ -1,0 +1,67 @@
+<!-- HTML code to detect a touch
+    screen device  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* By default, setting the 
+            image display to none */
+        #image-GFG {
+            display: none;
+        }
+
+        /* In case of touch-screen device,
+            setting image display to block.
+            Using @media to detect pointer 
+            accuracy */
+        @media (pointer:coarse) {
+            #image-GFG {
+                display: block;
+            }
+        }
+
+        /* pelo menos um mecanismo de entrada do dispositivo inclui apontamento de precisão fina */
+        @media (any-pointer: coarse) {
+            /* ... */
+        }
+
+        /* pelo menos um mecanismo de entrada do dispositivo inclui apontamento de precisão grossa */
+        @media (any-pointer: fine) {
+            /* ... */
+        }
+
+        /* o dispositivo não inclui qualquer mecanismo de apontamento */
+        @media (any-pointer: none) {
+            /* ... */
+        }
+
+        /* um ou mais mecanismo(s) de entrada disponíveis podem passar por cima (hover over) de elementos com facilidade */
+        @media (any-hover: hover) {
+            /* ... */
+        }
+
+        /* um ou mais mecanismo(s) de entrada disponíveis podem fazer hover, mas não com facilidade 
+        (por exemplo, simulando o foco ao executar um toque longo) */
+        @media (any-hover: on-demand) {
+            /* ... */
+        }
+
+        /* um ou mais mecanismo(s) de entrada disponíveis não podem fazer hover ou não há 
+        mecanismos de entrada de apontamentos (pointing input mechanisms) */
+        @media (any-hover: none) {
+            /* ... */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        This image will only be visible on
+        a touch screen device
+    </h2>
+
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210513020603/GFG.png" id="image-GFG">
+</body>
+
+</html>

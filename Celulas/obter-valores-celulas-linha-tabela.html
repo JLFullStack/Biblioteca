@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Col-1</th>
+                <th>Col-2</th>
+                <th>Col-3</th>
+                <th>Col-4</th>
+            </tr>
+        </thead>
+
+        <tbody id="demo-botao">
+            <tr>
+                <td>
+                    <input type="text" class="valor"/>
+                </td>
+                <td>
+                    <input type="text" class="valor">
+                </td>
+                <td>
+                    <input type="text" class="valor">
+                </td>
+                <td>                                       
+                    <input type="text" class="valor" oninput="obter(this)"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>B-1</td>
+                <td>B-2</td>
+                <td>B-3</td>
+                <td>
+                    <input type="button" value="Obter" onclick="obter(this)">
+                </td>
+            </tr>
+            <tr>
+                <td>C-1</td>
+                <td>C-2</td>
+                <td>C-3</td>
+                <td>
+                    <input type="text" value="Obter" onclick="obter(this)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function obter(botao) {
+            let linha = botao.closest("tr"); // Retorna para a linha
+
+            // Retorna a coleção de células
+            console.log(linha.cells);
+
+            alert(parseInt(linha.cells[0].value) + ", " + linha.cells[1].value + ", " + linha.cells[2].value)
+        }
+    </script>
+</body>
+
+</html>

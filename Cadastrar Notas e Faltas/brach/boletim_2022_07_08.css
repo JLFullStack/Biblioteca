@@ -1,0 +1,279 @@
+/*Foi retirado o efeito hover dos botões*/
+
+/*MODAL HEADER__________________________________________________*/
+.modal-header {
+    background-color: #2980b9;
+    text-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.modal-header div {
+    width: 50% !important;
+}
+
+.close {
+    float: right;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 0.6;
+    color: #fff;
+    text-shadow: -1px 2px 2px #000;
+    opacity: 100%;
+}
+
+.close:hover {
+    transition: all 0.3s linear;
+    transform: scale(1.3);
+    color: red;
+    opacity: 100%;
+}
+
+.modal-header.modal-title {
+    color: black;
+    text-shadow: 0px 0px 0px white;
+}
+
+.modal-title {
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    font-size: 18px;
+}
+
+
+/*MODAL BODY____________________________________________________*/
+.modal-body .container {
+    border: 1px solid #333 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border-radius: 3px;
+}
+
+.boletim-ano-letivo {
+    font-weight: bold;
+}
+
+.boletim-nome-aluno {
+    font-weight: bold;
+}
+
+.boletim-ano-turma {
+    font-weight: bold;
+}
+
+.boletim-nome-prof {
+    font-weight: bold;
+}
+
+#boletim {
+    /* border: 1px solid #333; */
+    width: 100%;
+    font-size: smaller;
+    margin-top: 1%;
+}
+
+#boletim tbody tr:last-of-type {
+    border-color: #C62828 !important;
+}
+
+#boletim tbody tr td {
+    padding: 5px;
+}
+
+.trim-1,
+.trim-2,
+.trim-3,
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    text-align: center;
+}
+
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    font-weight: bold;
+}
+
+.trim-1,
+.trim-2,
+.trim-3 {
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.historico-disciplina .valor,
+.historico-disciplina .falta {
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.historico-disciplina:last-of-type .valor,
+.historico-disciplina:last-of-type .falta {
+    border-bottom: none;
+}
+
+.titulo {
+    background-color: #EEEEEE;
+    font-weight: bold;
+    border-bottom: 1px solid #9E9E9E;
+    border-right: 1px solid #9E9E9E;
+}
+
+.historico-disciplina:last-of-type .titulo {
+    border-bottom: none;
+}
+
+/*BORDAS________________________________________*/
+.borda-tipo-1 {
+    border-left: 1px solid #333;
+    border-right: 1px solid #E0E0E0;
+}
+
+.borda-tipo-2 {
+    border-right: 1px solid #333;
+}
+
+.borda-tipo-3 {
+    border-right: 1px solid #E0E0E0;
+}
+
+.borda-tipo-4 {
+    border-right: 1px solid #505050;
+}
+
+.borda-tipo-5 {
+    border-block: 1px solid #333;
+}
+
+.borda-tipo-6 {
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    border-block-end: 1px solid #505050;
+}
+
+.borda-tipo-7 {
+    border-top: 1px solid #333;
+    border-right: 1px solid #505050;
+    border-block-end: 1px solid #505050;
+}
+
+/*COR NOTA____________________________________*/
+.nota-azul {
+    color: #1565C0;
+}
+
+.nota-vermelha {
+    color: #C62828;
+}
+
+.historico-geral-superior td:nth-child(1) {
+
+    background-color: #EEEEEE;
+    font-weight: bold;
+    border-bottom: 1px solid #9E9E9E;
+    border-right: 1px solid #333;
+}
+
+.resultado-final-superior td:nth-child(1) {
+    border-block: #333;
+}
+
+.resultado-final-superior td:nth-child(2) {
+    border-left: 1px solid #333;
+    text-align: center;
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+.resultado-final-inferior td:nth-child(1) {
+    font-weight: bold;
+    font-size: initial;
+    text-align: center;
+    border-left: 1px solid #333;
+}
+
+/*MODAL FOOTER________________________________________________*/
+.modal-footer {
+    background-color: #ECEFF1;
+}
+
+/*Buttons*/
+.btn-cad {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-cad:hover {
+    background-color: #2980b9;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-pdf {
+    background-color: #b92929;
+    border-color: #b92929;
+    color: white;
+}
+
+.btn-pdf:hover {
+    background-color: #b92929;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-plan {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-plan:hover {
+    background-color: #2980b9;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-email {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-email:hover {
+    background-color: #2980b9;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-print {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-print:hover {
+    background-color: #2980b9;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #2980b9;
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+    color: white;
+}
+
+.media-final {
+    padding: 20px !important;
+}

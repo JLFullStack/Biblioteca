@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        table {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 3px;
+        }
+
+        table tr th,
+        table tr td {
+            padding: 4px;
+            text-align: left;
+        }
+
+        table thead tr {
+            background-color: #212121;
+            color: #FFFFFF;
+        }
+
+        .odd {
+            background-color: #EEEEEE;
+        }
+
+        .even {
+            background-color: #B0BEC5;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="search" onkeyup="filtrar(this)" />
+    <button type="button">Apagar</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Escritorio</th>
+                <th>Idade</th>
+                <th>Inicio</th>
+                <th>Salario</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>28/11/2008</td>
+                <td>162.7</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Angelica Ramos</td>
+                <td>Chief Executive Escritorior (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>09/10/2009</td>
+                <td>1200</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>12/01/2009</td>
+                <td>86</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>13/10/2012</td>
+                <td>132</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Brenden Wagner</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>28</td>
+                <td>07/06/2011</td>
+                <td>206.85</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>02/12/2012</td>
+                <td>372</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Bruno Nash</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>38</td>
+                <td>03/05/2011</td>
+                <td>163.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Caesar Vance</td>
+                <td>Pre, Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>12/12/2011</td>
+                <td>106.45</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Cara Stevens</td>
+                <td>Sales Assistant</td>
+                <td>New York</td>
+                <td>46</td>
+                <td>06/12/2011</td>
+                <td>145.6</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>02/03/2012</td>
+                <td>433.06</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Charde Marshall</td>
+                <td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>16/10/2008</td>
+                <td>470.6</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Colleen Hurst</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>15/09/2009</td>
+                <td>205.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>26/09/2012</td>
+                <td>217.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>25/01/2011</td>
+                <td>112</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Doris Wilder</td>
+                <td>Sales Assistant</td>
+                <td>Sydney</td>
+                <td>23</td>
+                <td>20/09/2010</td>
+                <td>85.6</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Finn Camacho</td>
+                <td>Support Engineer</td>
+                <td>San Francisco</td>
+                <td>47</td>
+                <td>07/07/2009</td>
+                <td>87.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Fiona Green</td>
+                <td>Chief Operating Escritorior (COO)</td>
+                <td>San Francisco</td>
+                <td>48</td>
+                <td>11/03/2010</td>
+                <td>850</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>25/07/2011</td>
+                <td>170.75</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Gavin Cortez</td>
+                <td>Team Leader</td>
+                <td>San Francisco</td>
+                <td>22</td>
+                <td>26/10/2008</td>
+                <td>235.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Gavin Joyce</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>22/12/2010</td>
+                <td>92.57</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Gloria Little</td>
+                <td>Systems Adminitextoator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>10/04/2009</td>
+                <td>237.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>18/12/2012</td>
+                <td>313.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Hermione Butler</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>47</td>
+                <td>21/03/2011</td>
+                <td>356.25</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>06/08/2012</td>
+                <td>137.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Hope Fuentes</td>
+                <td>Secretary</td>
+                <td>San Francisco</td>
+                <td>41</td>
+                <td>12/02/2010</td>
+                <td>109.85</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Howard Hatfield</td>
+                <td>Escritorio ManIdader</td>
+                <td>San Francisco</td>
+                <td>51</td>
+                <td>16/12/2008</td>
+                <td>164.5</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Jackson Bradshaw</td>
+                <td>Director</td>
+                <td>New York</td>
+                <td>65</td>
+                <td>26/09/2008</td>
+                <td>645.75</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Jena Gaines</td>
+                <td>Escritorio ManIdader</td>
+                <td>London</td>
+                <td>30</td>
+                <td>19/12/2008</td>
+                <td>90.56</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>Jenette Caldwell</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>03/09/2011</td>
+                <td>345</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Jennifer Acosta</td>
+                <td>Junior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>43</td>
+                <td>01/02/2013</td>
+                <td>75.65</td>
+                <td>
+                    <button type="button" onclick="alert('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')">
+                        Perfil
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const tr = document.querySelectorAll("table tbody tr");
+
+        const filtrar = (input) => {
+            let texto = input.value;
+
+            console.log(texto);
+
+            for (let i = 0; i < tr.length; i++) {
+                const td = tr[i].cells;
+                let contador = 0;
+
+                for (let j = 0; j < td.length; j++) {
+
+                    // Se a célula contém o texto não incrementa, caso contrário sim
+                    if (td[j].innerText.toLowerCase().includes(texto.toLowerCase())) contador += 0;
+                    else contador += 1;
+
+                    // Se o contador for igual ao total de células então oculta a linha, caso contrário exibe
+                    if (contador === td.length)
+                        td[j].parentNode.setAttribute("style", "display: none;");
+                    else
+                        td[j].parentNode.removeAttribute("style"); // Ou
+                    //td[j].parentNode.style.removeProperty("display");
+                }
+
+            }
+
+            zebrar();
+        }
+
+        const zebrar = () => {
+            // Limpa os estilos das linhas
+            for (let i = 0; i < tr.length; i++) {
+                if (tr[i].classList.contains("odd"))
+                    tr[i].classList.remove("odd");
+                else
+                    tr[i].classList.remove("even");
+            }
+
+            const trVisivel = [...document.querySelectorAll("table tbody tr")].filter(x => x.style.display !== "none");
+
+            // Reaplica o estilo de acordo com as linhas visíveis
+            for (let i = 0; i < trVisivel.length; i++) {
+                if (Math.trunc(i % 2) === 0)
+                    trVisivel[i].classList.add("odd");
+                else
+                    trVisivel[i].classList.add("even");
+            }
+        }
+        zebrar();
+
+        // Reinicia toda a filtragem no clique do botão
+        document.querySelector("button").addEventListener("click", (e) => {
+            const input = e.target.previousElementSibling;
+
+            input.value = "";
+            input.focus();
+
+            tr.forEach(x => {
+                x.removeAttribute("style"); // Ou
+                //x.style.removeProperty("display");
+            });
+
+            zebrar();
+        });
+
+        // Reinicia toda a filtragem no clique do ícone interno do input
+        document.querySelector("input[type=search]").addEventListener("search", (e) => {
+            tr.forEach(x => {
+                x.removeAttribute("style"); // Ou
+                //x.style.removeProperty("display");
+            });
+
+            zebrar();
+        });
+    </script>
+</body>
+
+</html>

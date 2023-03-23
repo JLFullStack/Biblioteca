@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Educação</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="style_boletim.css" /> 
+</head>
+
+<body>
+    <div class="container">
+
+        <table id="boletim">
+            <tbody>
+                <tr>
+                    <td class="text-right" colspan="9">Ano letivo:&nbsp;<span class="boletim-ano-letivo">2022</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-left" colspan="9">Aluno(a):&nbsp;<span class="boletim-nome-aluno">JOÃO
+                            NINGUÉM</span></td>
+                </tr>
+
+                <tr class="historico-geral superior">
+                    <td rowspan="2">DISCIPLINA</td>
+                    <td class="trim-1" colspan="2">1º Trim.</td>
+                    <td class="trim-2" colspan="2">2º Trim.</td>
+                    <td class="trim-3" colspan="3">3º Trim.</td>
+                </tr>
+
+                <tr class="historico-geral lateral">
+                    <td class="trim-1">Notas</td>
+                    <td class="trim-1">Faltas</td>
+                    <td class="trim-2">Notas</td>
+                    <td class="trim-2">Faltas</td>
+                    <td class="trim-3">Notas</td>
+                    <td class="trim-3">Conselho</td>
+                    <td class="trim-3">Faltas</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">L. Portuguesa</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                    <td class="valor">6</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">História</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Geografia</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Matemática</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                    <td class="valor">6</td>
+                    <td class="valor">6</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Ciências</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Ed. Física</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Arte</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="historico-disciplina">
+                    <td class="titulo">Inglês</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                    <td class="valor">0</td>
+                    <td class="valor">0</td>
+                    <td class="falta">0</td>
+                </tr>
+
+                <tr class="boletim-rodape">
+                    <td class="text-right" colspan="8">
+                        <button type="button" class="btn btn-sm btn-default" id="btn1">Imprimir</button>
+                        <button type="button" class="btn btn-sm btn-default">E-mail</button>
+                        <button type="button" class="btn btn-sm btn-default">Planilha</button>
+                        <button type="button" class="btn btn-sm btn-default">PDF</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script_boletim.js"></script>
+</body>
+
+</html>
