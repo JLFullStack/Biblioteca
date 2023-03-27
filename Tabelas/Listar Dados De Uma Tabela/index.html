@@ -13,7 +13,7 @@
     <style>
         table {
             margin-top: 20px;
-            border: solid 3px black;
+            border: solid 2px black;
         }
 
         table caption {
@@ -33,7 +33,7 @@
         }
 
         table .table-number {
-            width: 230px;
+            width: 300px;
             text-align: end;
         }
     </style>
@@ -41,11 +41,11 @@
 
 <body>
     <div class="container table-responsive">
-        <table class="table table-bordered border-dark text-center" id="tb-lista-total-de-pedidos">
-            <caption class="caption-top text-center">LISTA DE PEDIDOS</caption>
+        <table class="table table-bordered border-dark table-striped text-center" id="tb-lista-total-de-solicitacao">
+            <caption class="caption-top text-center">LISTA DE SOLICITAÇÕES</caption>
             <thead>
                 <tr>
-                    <th scope="col">SECRETARIAS</th>
+                    <th scope="col">Secretarias</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,19 +90,19 @@
     </div>
 
     <div class="container table-responsive">
-        <table class="table table-bordered border-dark text-center" id="tb-qtd-pedidos-por-secretaria">
-            <caption class="caption-top text-center">QUANTIDADE DE PEDIDOS POR SECRETARIA</caption>
+        <table class="table table-bordered border-dark table-striped text-center" id="tb-qtd-solicitacao-por-secretaria">
+            <caption class="caption-top text-center">QUANTIDADE DE SOLICITAÇÕES POR SECRETARIA</caption>
             <thead>
                 <tr>
-                    <th scope="col">SECRETARIAS</th>
-                    <th scope="col">QUANTIDADE DE PEDIDOS</th>
+                    <th scope="col">Secretarias</th>
+                    <th scope="col">Quantidade de Solicitações</th>
                 </tr>
             </thead>
 
             <tbody></tbody>
 
             <tfoot>
-                <th scope="row" class="border-0 text-start">Total de pedidos</th>
+                <th scope="row" class="border-0 text-start">Total de solicitações</th>
                 <td class="table-number border-0"></td>
             </tfoot>
         </table>
@@ -113,9 +113,9 @@
     </script>
 
     <script>
-        function ListarQuantidadeDePedidosPorSecretaria() {
+        function ListarQuantidadeDeSolicitacoesPorSecretaria() {
             const
-                tbListaTotal = document.querySelector("#tb-lista-total-de-pedidos"),
+                tbListaTotal = document.querySelector("#tb-lista-total-de-solicitacao"),
                 rows = tbListaTotal.querySelectorAll('tbody tr'),
                 formData = new FormData();
 
@@ -128,22 +128,20 @@
                 if (!(row.nextElementSibling == undefined)) {
                     classNameCellPosterior = row.nextElementSibling.cells[0].classList[0];
 
-                    //se a classe da célula atual é diferente da célula posterior
-                    if (!(classNameCellAtual == classNameCellPosterior)) {
-                        // adiciona os dados ao objeto FormData
-                        formData.append(`${classNameCellAtual}`, verificarQuantidadeDePedidosPorSecretaria(
+                    //se a classe da célula atual é diferente da célula posterior, adiciona os dados ao objeto FormData
+                    if (!(classNameCellAtual == classNameCellPosterior))
+                        formData.append(`${classNameCellAtual}`, verificarQuantidadeDeSolicitacoesPorSecretaria(
                             classNameCellAtual));
-                    }
+
                 };
 
-                //se não existe célula abaixo
-                if (row.nextElementSibling == undefined) {
-                    formData.append(`${classNameCellAtual}`, verificarQuantidadeDePedidosPorSecretaria(
+                //se não existe célula abaixo, adiciona os dados ao objeto FormData
+                if (row.nextElementSibling == undefined)
+                    formData.append(`${classNameCellAtual}`, verificarQuantidadeDeSolicitacoesPorSecretaria(
                         classNameCellAtual));
-                }
             });
 
-            function verificarQuantidadeDePedidosPorSecretaria(className) {
+            function verificarQuantidadeDeSolicitacoesPorSecretaria(className) {
                 let count = 0;
 
                 rows.forEach(row => {
@@ -151,13 +149,13 @@
                 });
 
                 return count;
-            }
+            };
 
-            //#region Criação e configuração dos valores das linhas e células da tabela que lista a quantidade de pedidos por secretaria 
+            //#region Criação e configuração dos valores das linhas e células da tabela que lista a quantidade de solicitações por secretaria 
             const
-                tbPedidosPorSecretaria = document.querySelector("#tb-qtd-pedidos-por-secretaria"),
-                tbody = tbPedidosPorSecretaria.querySelector('tbody'),
-                tdTotal = tbPedidosPorSecretaria.querySelector('tfoot td');
+                tbSolicitacaoPorSecretaria = document.querySelector("#tb-qtd-solicitacao-por-secretaria"),
+                tbody = tbSolicitacaoPorSecretaria.querySelector('tbody'),
+                tdTotal = tbSolicitacaoPorSecretaria.querySelector('tfoot td');
 
             let qtdTotal = 0;
 
@@ -176,15 +174,15 @@
                 cell1.innerHTML = pair[0];
                 cell2.innerHTML = pair[1];
 
-                //soma a quantidade total de pedidos
+                //soma a quantidade total de solicitações
                 qtdTotal += parseInt(pair[1]);
 
-                // configura o valor da célula "total de pedidos" 
+                // configura o valor da célula "total de solicitações" 
                 tdTotal.innerHTML = qtdTotal
-            }
+            };
             //#endregion
         }
-        ListarQuantidadeDePedidosPorSecretaria();
+        ListarQuantidadeDeSolicitacoesPorSecretaria();
     </script>
 </body>
 
