@@ -518,7 +518,8 @@
                     tr[i].classList.remove("even");
             }
 
-            const trVisivel = [...document.querySelectorAll("table tbody tr")].filter(x => x.style.display !== "none");
+            const trVisivel = [...document.querySelectorAll("table tbody tr")].filter(x => x.style.display !==
+                "none");
 
             // Reaplica o estilo de acordo com as linhas visíveis
             for (let i = 0; i < trVisivel.length; i++) {
