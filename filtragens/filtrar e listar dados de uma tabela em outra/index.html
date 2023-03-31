@@ -85,12 +85,16 @@
                 <tr>
                     <td class="SEDETRA">SEDETRA</td>
                 </tr>
+                <tr>
+                    <td class="SEDUC">SEDUC</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <div class="container table-responsive">
-        <table class="table table-bordered border-dark table-striped text-center" id="tb-qtd-solicitacao-por-secretaria">
+        <table class="table table-bordered border-dark table-striped text-center"
+            id="tb-qtd-solicitacao-por-secretaria">
             <caption class="caption-top text-center">QUANTIDADE DE SOLICITAÇÕES POR SECRETARIA</caption>
             <thead>
                 <tr>
@@ -119,36 +123,15 @@
                 rows = tbListaTotal.querySelectorAll('tbody tr'),
                 formData = new FormData();
 
+            //adiciona um novo objeto ou o atualiza, caso já exista algum com esta key
             rows.forEach(row => {
-                let
-                    classNameCellAtual = row.cells[0].classList[0],
-                    classNameCellPosterior;
-
-                //se existe alguma célula abaixo
-                if (!(row.nextElementSibling == undefined)) {
-                    classNameCellPosterior = row.nextElementSibling.cells[0].classList[0];
-
-                    //se a classe da célula atual é diferente da célula posterior, adiciona os dados ao objeto FormData
-                    if (!(classNameCellAtual == classNameCellPosterior))
-                        formData.append(`${classNameCellAtual}`, verificarQuantidadeDeSolicitacoesPorSecretaria(
-                            classNameCellAtual));
-
-                };
-
-                //se não existe célula abaixo, adiciona os dados ao objeto FormData
-                if (row.nextElementSibling == undefined)
-                    formData.append(`${classNameCellAtual}`, verificarQuantidadeDeSolicitacoesPorSecretaria(
-                        classNameCellAtual));
+                let className = row.cells[0].classList[0];
+                formData.set(`${className}`, verificarQuantidadeDeSolicitacoesPorSecretaria(className));
             });
 
             function verificarQuantidadeDeSolicitacoesPorSecretaria(className) {
-                let count = 0;
-
-                rows.forEach(row => {
-                    if (row.cells[0].classList.contains(className)) count++;
-                });
-
-                return count;
+                const count = [...rows].filter(row => row.cells[0].classList[0] == className);
+                return count.length;
             };
 
             //#region Criação e configuração dos valores das linhas e células da tabela que lista a quantidade de solicitações por secretaria 
@@ -161,8 +144,7 @@
 
             // percorre os pares chave-valor no objeto FormData
             for (let pair of formData.entries()) {
-
-                // cria uma nova linha e duas células para ela
+                // cria uma nova linha e duas células para a mesma
                 let
                     newRow = tbody.insertRow(),
                     cell1 = newRow.insertCell(),
@@ -176,10 +158,11 @@
 
                 //soma a quantidade total de solicitações
                 qtdTotal += parseInt(pair[1]);
-
-                // configura o valor da célula "total de solicitações" 
-                tdTotal.innerHTML = qtdTotal
             };
+
+            // configura o valor da célula "total de solicitações" 
+            tdTotal.innerHTML = qtdTotal
+
             //#endregion
         }
         ListarQuantidadeDeSolicitacoesPorSecretaria();
