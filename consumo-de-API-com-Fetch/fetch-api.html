@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web API</title>
+</head>
+
+<body>
+    <label for="cep">CEP</label>
+    <input type="text" id="cep" />
+
+    <label for="rua">Logradouro</label>
+    <input type="text" id="rua" disabled />
+
+    <label for="bairro">Bairro</label>
+    <input type="text" id="bairro" disabled />
+
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade" disabled />
+
+    <script>
+        const cep = document.querySelector("#cep");
+
+        cep.addEventListener("change", (e) => {
+            const url = `https://viacep.com.br/ws/${e.target.value}/json`;
+
+            fetch(url)
+                .then(function (response) {
+                    console.log(response);
+
+                    return response.text();
+                })
+                .then(function (json) {
+                    console.log(json);
+
+                    const data = JSON.parse(json);
+
+                    document.querySelector("#rua").value = data.logradouro;
+                    document.querySelector("#bairro").value = data.bairro;
+                    document.querySelector("#cidade").value = data.localidade;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+    </script>
+</body>
+
+</html>
