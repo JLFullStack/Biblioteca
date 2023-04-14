@@ -1,0 +1,23 @@
+@media only screen and (min-width: 1920px) {
+    dialog {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    dialog {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    dialog {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    dialog {
+        max-width: 95%;
+    }
+}

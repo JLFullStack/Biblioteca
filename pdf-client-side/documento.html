@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/jspdf/dist/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <input type="button" value="PDF" onclick="gerar()" />
+
+    <script>
+        function gerar() {
+            const doc = new window.jspdf.jsPDF();
+
+            doc.setFont("times", "bolditalic");
+            doc.setFontSize(20);
+            doc.text("Lorem ipsum dolor sit amet, consectetur adipiscing elit", 42, 22);
+            doc.addImage("assets/img/emoji-smile.jpg", "jpeg", 15, 15, 18, 18);
+            //doc.addImage("assets/img/emoji-smile.png", "png", 15, 15, 18, 18);
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(16);
+            doc.text("Donec faucibus nisl orci", 95.5, 30);
+
+            doc.setFont("times", "bold");
+            doc.setFontSize(14);
+            doc.text("Nulla pretium in orci quis venenatis", 105, 48, null, null, "center");
+
+            doc.setFont("times", "italic");
+            doc.setFontSize(14);
+            doc.text("Maecenas a velit diam", 105, 60, null, null, "center");
+
+            doc.setFont("times", "bold");
+            doc.setFontSize(14);
+            doc.text("Employee", 16, 72, null, null, "left");
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(12);
+            doc.text("Name: Angelica Ramos", 16, 80, null, null, "left");
+            doc.text("Age: 47", 16, 88, null, null, "left");
+            doc.text("E-mail: angelicaramos@gmail.com", 16, 96, null, null, "left");
+            doc.text("Phone: 9999-9999", 16, 104, null, null, "left");
+
+            doc.setFont("times", "bold");
+            doc.setFontSize(14);
+            doc.text("Office", 16, 116, null, null, "left");
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(12);
+            doc.text("Position: Chief Executive Officer (CEO)", 16, 124, null, null, "left");
+            doc.text("Salary: $1,200.00", 16, 132, null, null, "left");
+
+            doc.setFont("times", "bold");
+            doc.setFontSize(10);
+            doc.text("Lorem ipsum", 16, 264, null, null, "left");
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(10);
+            doc.text(
+                "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
+                "\n" +
+                "2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                16, 270, null, null, "left");
+
+            doc.save("demo");
+        }
+    </script>
+</body>
+
+</html>

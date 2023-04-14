@@ -1,0 +1,651 @@
+    /* #region keyframes ------------------------------ */
+
+    /* #region fade-in: aumenta a opacidade */
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* #endregion */
+
+    /* #region fade-out: diminui a opacidade */
+    @keyframes fade-out {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* #endregion */
+
+    /* #region slide-up: desliza para cima */
+    @keyframes slide-up {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region slide-down: desliza para baixo */
+    @keyframes slide-down {
+        0% {
+            transform: translateY(-100%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region slide-left: desliza para a esquerda */
+    @keyframes slide-left {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region slide-right: desliza para a direita */
+    @keyframes slide-right {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region unfold-out: desdobra para fora */
+    @keyframes unfold-out {
+        0% {
+            transform: scaleY(1) scaleX(1);
+        }
+
+        50% {
+            transform: scaleY(.005) scaleX(1);
+        }
+
+        100% {
+            transform: scaleY(.005) scaleX(0);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region unfold-in: desdobra para dentro */
+    @keyframes unfold-in {
+        0% {
+            transform: scaleY(.005) scaleX(0);
+        }
+
+        50% {
+            transform: scaleY(.005) scaleX(1);
+        }
+
+        100% {
+            transform: scaleY(1) scaleX(1);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region zoom-out: aumenta o zoom */
+    @keyframes zoom-out {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region zoom-in: diminui o zoom */
+    @keyframes zoom-in {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region increase-scale: aumenta a escala */
+    @keyframes increase-scale {
+        0% {
+            transform: scale(.85);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region decrease-scale: diminui a escala */
+    @keyframes decrease-scale {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(.85);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-up: remove para cima */
+    @keyframes remove-up {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(-120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-down: remove para baixo */
+    @keyframes remove-down {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-left: remove para a esquerda */
+    @keyframes remove-left {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(-120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-right: remove para a direita */
+    @keyframes remove-right {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region increase-explosion: aumenta a explosão */
+    @keyframes increase-explosion {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        99.9% {
+            transform: scale(2);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(0);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region decrease-explosion: diminui a explosão */
+    @keyframes decrease-explosion {
+        0% {
+            transform: scale(2);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* #endregion */
+
+    /* #region runner-in-road: corredor na estrada */
+    @keyframes runner-in-road {
+        0% {
+            transform: translateX(-1500px) skewX(30deg) scaleX(1.3);
+        }
+
+        70% {
+            transform: translateX(30px) skewX(0deg) scaleX(.9);
+        }
+
+        100% {
+            transform: translateX(0px) skewX(0deg) scaleX(1);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region runner-out-road: corredor fora da estrada */
+    @keyframes runner-out-road {
+        0% {
+            transform: translateX(0px) skewX(0deg) scaleX(1);
+        }
+
+        30% {
+            transform: translateX(-30px) skewX(-5deg) scaleX(.9);
+        }
+
+        100% {
+            transform: translateX(1500px) skewX(30deg) scaleX(1.3);
+        }
+    }
+
+    /* #endregion */
+
+    /* #endregion */
+
+    /* #region Animation Classes -----------------------*/
+
+    /* #region fade */
+    .fade-in {
+        animation: fade-in 700ms forwards;
+    }
+
+    .fade-out {
+        animation: fade-out 500ms forwards;
+    }
+    /* #endregion */
+
+    /* #region zoom */
+    .zoom-in{
+        animation: zoom-in .3s .1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
+        /* transform: translate(-50%, -50%) !important; */
+
+    }
+
+    .zoom-out{
+        animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 500ms forwards;
+    }
+    /* #endregion */
+
+
+
+
+
+
+    
+    /* #region remove effects */
+    .remove-up {
+        animation: remove-up.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-down {
+        animation: remove-down.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-left {
+        animation: remove-left.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-right {
+        animation: remove-right.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region scale */
+    .increase-scale {
+        animation: increase-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .decrease-scale {
+        animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    /* #endregion */
+
+    /* #region explosion */
+    .increase-explosion {
+        overflow: hidden;
+        animation: increase-explosion .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .decrease-explosion {
+        overflow: hidden;
+        animation: decrease-explosion .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    /* #endregion */
+
+    /* #region zoom and fade */
+    .zoom-fade-in,
+    .zoom-fade[open] {
+        transform: scale(0);
+        animation: zoom-in .3s .1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
+    }
+
+    .zoom-fade[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .zoom-fade-out,
+    .zoom-fade[closing] {
+        animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 500ms forwards;
+    }
+
+    .zoom-fade[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region zoom and explosion */
+    .zoom-explosion {
+        animation: slide-right 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .zoom-explosion[open] {
+        transform: scale(0);
+        animation: zoom-in .3s .1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
+    }
+
+    .zoom-explosion[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .zoom-explosion[closing] {
+        animation: increase-explosion .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .zoom-explosion[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region  zoom, explosion and decrease */
+    .zoom-explosion-decrease {
+        animation: slide-right 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .zoom-explosion-decrease[open] {
+        transform: scale(0);
+        animation: zoom-in .3s .1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
+    }
+
+    .zoom-explosion-decrease[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .zoom-explosion-decrease[closing] {
+        animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 500ms forwards;
+
+    }
+
+    .zoom-explosion-decrease[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region unfold and zoom */
+    .unfold-zoom[open] {
+        transform: scale(0);
+        animation: zoom-in .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .unfold-zoom[open]::backdrop {
+        animation: unfold-in 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .unfold-zoom[closing] {
+        animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .unfold-zoom[closing]::backdrop {
+        /* animation: fade-out 500ms forwards; <<-- this is other option */
+        animation: unfold-out 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 1200ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide up and fade */
+    .slide-up-fade {
+        animation: slide-up 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .slide-up-fade[open] {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-up-fade[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-up-fade[closing] {
+        inset: 0;
+        pointer-events: none;
+        animation: fade-out 500ms forwards;
+    }
+
+    .slide-up-fade[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide up and scale */
+    .slide-up-scale {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-up-scale[open] {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-up-scale[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-up-scale[closing] {
+        inset: 0;
+        pointer-events: none;
+        animation: fade-out 500ms forwards;
+    }
+
+    .slide-up-scale[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide up and overlap */
+    .slide-up-overlap {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-up-overlap[open] {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-up-overlap[open]::backdrop {
+        animation: slide-up 500ms forwards, fade-in 500ms forwards;
+    }
+
+    .slide-up-overlap[closing] {
+        animation: remove-down .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 300ms forwards;
+
+    }
+
+    .slide-up-overlap[closing]::backdrop {
+        animation: remove-down.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide down and fade */
+    .slide-down-fade {
+        animation: slide-down 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .slide-down-fade[open] {
+        animation: slide-down 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-down-fade[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-down-fade[closing] {
+        inset: 0;
+        pointer-events: none;
+        animation: fade-out 500ms forwards;
+    }
+
+    .slide-down-fade[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide down and remove down */
+    .slide-down-remove-down {
+        animation: slide-down 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .slide-down-remove-down[open] {
+        animation: slide-down 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-down-remove-down[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-down-remove-down[closing] {
+        animation: remove-down .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 300ms forwards;
+
+    }
+
+    .slide-down-remove-down[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide left and fade */
+    .slide-left-fade {
+        animation: slide-left 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .slide-left-fade[open] {
+        animation: slide-left 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-left-fade[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-left-fade[closing] {
+        inset: 0;
+        pointer-events: none;
+        animation: fade-out 500ms forwards;
+    }
+
+    .slide-left-fade[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region slide right and fade */
+    .slide-right-fade {
+        animation: slide-right 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .slide-right-fade[open] {
+        animation: slide-right 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-right-fade[open]::backdrop {
+        animation: fade-in 700ms forwards;
+    }
+
+    .slide-right-fade[closing] {
+        inset: 0;
+        pointer-events: none;
+        animation: fade-out 500ms forwards;
+    }
+
+    .slide-right-fade[closing]::backdrop {
+        animation: fade-out 500ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region run-right */
+    .run-right {
+        animation: slide-right 200ms forwards, fade-in 200ms forwards;
+    }
+
+    .run-right[open] {
+        animation: slide-right 500ms forwards, fade-in 500ms forwards, runner-in-road .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .run-right[open]::backdrop {
+        animation: fade-in 500ms forwards;
+    }
+
+    .run-right[closing] {
+        animation: remove-right .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards, runner-out-road .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
+    .run-right[closing]::backdrop {
+        animation: fade-out 700ms forwards;
+    }
+
+    /* #endregion */
+
+
+    /* #endregion */

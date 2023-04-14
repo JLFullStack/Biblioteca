@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API</title>
+
+    <script src="assets/js/jspdf/dist/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <select></select>
+        <button>Pesquisar</button>
+    </div>
+
+    <div style="margin-top: 8px;">
+        <img src="" alt="" />
+        <ul></ul>
+    </div>
+
+    <script>
+        const
+            ddl = document.querySelector("select"),
+            img = document.querySelector("img"),
+            ul = document.querySelector("ul");
+
+        (() => {
+            const url = "https://restcountries.com/v3.1/all";
+
+            fetch(url)
+                .then(function (response) {
+                    console.log(response);
+
+                    return response.text();
+                })
+                .then(function (text) {
+                    const paises = JSON.parse(text);
+
+                    paises.forEach(pais => {
+                        ddl.appendChild(new Option(pais.name.common, pais.cca2))
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        })();
+
+        document.querySelector("button").addEventListener("click", () => {
+            const
+                nomeDoPais = ddl.children[ddl.selectedIndex].innerText.toLowerCase(),
+                url = `https://restcountries.com/v3.1/name/${nomeDoPais}`;
+
+                ul.innerHTML = "";
+
+            fetch(url)
+                .then(function (response) {
+                    console.log(response);
+
+                    return response.text();
+                })
+                .then(function (text) {
+                    const obj = JSON.parse(text)[0];
+
+                    const pais = {
+                        nomeInternacional: {
+                            comum: obj.name.common,
+                            oficial: obj.name.official
+                        },
+                        nomeNativo: {
+                            comum: Object.values(obj.name.nativeName)[0].common,
+                            oficial: Object.values(obj.name.nativeName)[0].official
+                        },
+                        capital: obj.capital,
+                        continente: obj.continents,
+                        populacao: obj.population,
+                        moeda: {
+                            nome: Object.values(obj.currencies)[0].name,
+                            simbolo: Object.values(obj.currencies)[0].symbol,
+                        },
+                        idioma: Object.values(obj.languages),
+                        listarIdiomas: function (idioma) {
+                            return this.idioma.join(", ");
+                        },
+                        mapa: {
+                            googleMaps: obj.maps.googleMaps,
+                            openStreetMaps: obj.maps.openStreetMaps,
+                        },
+                        bandeira: obj.flags.png
+                    }
+
+                    displayList(pais);
+                    createPDF(pais);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+
+        function displayList(pais) {
+            ul.innerHTML += `
+                        <li><label>Nome Internacional Comum:</label> ${pais.nomeInternacional.comum}</li>
+                        <li><label>Nome Internacional Oficial:</label> ${pais.nomeInternacional.oficial}</li>
+                        <li><label>Nome Nativo Comum:</label> ${pais.nomeNativo.comum}</li>
+                        <li><label>Nome Nativo Oficial:</label> ${pais.nomeNativo.oficial}</li>
+                        <li><label>Capital:</label> ${pais.capital}</li>
+                        <li><label>Continente:</label> ${pais.continente}</li>
+                        <li><label>População:</label> ${pais.populacao}</li>
+                        <li><label>Moeda:</label> ${pais.moeda.nome} | ${pais.moeda.simbolo}</li>
+                        <li><label>Idioma(as):</label> ${pais.listarIdiomas()}</li>
+                        <li><a href="${pais.mapa.googleMaps}" target="_blank">Google Maps</a></li>
+                        <li><a href="${pais.mapa.openStreetMaps}" target="_blank">OpenStreetMap</a></li>
+                    `;
+
+            img.src = pais.bandeira;
+        }
+
+        function createPDF(pais) {
+            const doc = new window.jspdf.jsPDF();
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(12);
+            doc.text(pais.nomeInternacional.comum, 16, 20, null, null, "left");
+            doc.text(pais.capital, 16, 30, null, null, "left");
+            doc.text(pais.continente, 16, 40, null, null, "left");
+            doc.text(pais.moeda.nome, 16, 50, null, null, "left");
+
+            doc.save("demo");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jspdf/dist/jspdf.umd.min.js"></script>
+    <script src="assets/js/jspdf-autotable/dist/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+    <script>
+        const employees = '[{"Name":"David","Email":"david@example.com","Country":"Sweden"},{"Name":"Castille","Email":"castille@example.com","Country":"Spain"}]';
+
+        // Array de objetos
+        /*
+        const employees = [{
+                Name: "David",
+                Email: "david@example.com",
+                Country: "Sweden",
+            },
+            {
+                Name: "Castille",
+                Email: "castille@example.com",
+                Country: "Spain",
+            }
+        ];
+        */
+
+        let listOfEmployees = [];
+
+        JSON.parse(employees).forEach((employee) => // Para JSON
+            //employees.forEach((employee) => // Para array de objetos
+            listOfEmployees.push([
+                employee.Name,
+                employee.Email,
+                employee.Country,
+            ])
+        );
+
+        const now = new Date().toLocaleDateString("pt-BR", {
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+        });
+
+        const doc = new window.jspdf.jsPDF({
+            putOnlyUsedFonts: true,
+            orientation: "landscape"
+        });
+
+        doc.setFont("times", "bolditalic");
+        doc.setFontSize(20);
+        doc.text("Município da Estância Balneária de Praia Grande", 89.9, 22);
+        doc.addImage("assets/img/brasao.jpg", "JPEG", 62, 15, 18, 18);
+
+        doc.setFont("times", "normal");
+        doc.setFontSize(16);
+        doc.text("Estado de São Paulo", 127, 30);
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.text("Secretaria de Habitação", 150, 47, null, null, "center");
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(8);
+        doc.text("Gerado em: " + now.replace(", ", " "), 261.5, 48, null, null, "center");
+
+        let totalPagesExp = "{total_pages_count_string}";
+
+        doc.autoTableSetDefaults({
+            headStyles: {
+                fillColor: 0
+            },
+            styles: {
+                fontSize: 8
+            }
+        });
+
+        doc.autoTable({
+            head: [
+                ["Name", "Email", "Country"],
+            ],
+            // body: [
+            //     ["David", "david@example.com", "Sweden"],
+            //     ["Castille", "castille@example.com", "Spain"],
+            // ],
+            body: [...listOfEmployees],
+            didDrawPage: function (data) {
+                // Header
+                doc.setFontSize(20);
+                doc.setTextColor(40);
+                // if (base64Img) {
+                //     doc.addImage(base64Img, 'JPEG', data.settings.margin.left, 15, 10, 10)
+                // }
+                //doc.text("Report", data.settings.margin.left + 15, 22);
+
+                // Footer
+                let str = "Página " + doc.internal.getNumberOfPages();
+
+                if (typeof doc.putTotalPages === "function") {
+                    str = str + " de " + totalPagesExp;
+                }
+                doc.setFontSize(8);
+
+                let pageSize = doc.internal.pageSize;
+                let pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight();
+
+                doc.text(str, data.settings.margin.left, pageHeight - 10);
+            },
+            // margin: {
+            //     top: 30,
+            // },
+            startY: 50,
+        });
+
+        if (typeof doc.putTotalPages === "function") {
+            doc.putTotalPages(totalPagesExp);
+        }
+
+        doc.save("demo-" + now.replace(", ", "_"));
+    </script>
+</body>
+
+</html>
