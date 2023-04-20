@@ -1,16 +1,53 @@
+    body {
+        overflow: hidden;
+        background-color: #1d2328;
+    }
+
     .card-img {
+        width: max-content;
+        z-index: 999;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card-img::after {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
+        opacity: 0;
+        content: "";
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .card-img card {
+        display: none;
+        opacity: 0;
+        width: 220px;
+        height: 300px;
+        border-radius: 15px;
+        background-color: #333f48;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img card img {
         background-image: url("https://picsum.photos/200/300?random=1");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
 
-        opacity: 0;
-        width: 240px;
-        height: 240px;
-        z-index: 999;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: solid 1px #333f48;
     }

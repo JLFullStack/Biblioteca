@@ -12,20 +12,64 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../common/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../common/font-awesome-pro/pro-5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
     <link rel="stylesheet" href="assets/css/media-queries.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- endregion -->
 </head>
 
 <body>
-    <img class="card-img"></img>
+    <section class="card-img">
+        <card class="align-items-center flex-column" id="card-1">
+            <a class="btn btn-close text-gray pt-3 pe-3 ms-auto"></a>
+            <img class="mb-3"></img>
+            <strong class="text-white">Lorem ipsum</strong>
+            <p class="text-white">Lorem</p>
+        </card>
+    </section>
 
     <!-- #region Action Buttons -->
-    <section class="m-5">
-        <button class="btn btn-outline-primary m-2 animation fades">fade</button>
-        <button class="btn btn-outline-primary m-2 animation zoom">zoom and fade</button>
+    <section id="button-group" class="m-5">
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'fade-in', 'fade-out')">
+            fade-in / fade-out
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'zoom-in', 'zoom-out')">
+            zoom-int / zoom-out
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-up', 'remove-up')">
+            slide-up / remove-up
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-up', 'remove-down')">
+            slide-up / remove-down
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-down', 'remove-down')">
+            slide-down / remove-down
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-down', 'remove-up')">
+            slide-down / remove-up
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-left', 'remove-left')">
+            slide-left / remove-left
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-right', 'remove-right')">
+            slide-right / remove-right
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-up-scale', 'remove-up')">
+            slide-up-scale / remove-up
+        </button>
+
+        <button class="btn btn-outline-primary m-2" onclick="animateTag('card-1', 'slide-down-scale', 'remove-down')">
+            slide-down-scale / remove-down
+        </button>
+
     </section>
     <!-- #endregion -->
 
@@ -35,7 +79,6 @@
         crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../../common/font-awesome-pro/pro-5.13.0/js/all.min.js"></script>
     <script src="../../common/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
     <!-- #endregion -->

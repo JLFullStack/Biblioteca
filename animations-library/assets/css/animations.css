@@ -1,5 +1,57 @@
     /* #region keyframes ------------------------------ */
 
+    /* #region remove-up: remove para cima */
+    @keyframes remove-up {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(-120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-down: remove para baixo */
+    @keyframes remove-down {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-left: remove para a esquerda */
+    @keyframes remove-left {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(-120%);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region remove-right: remove para a direita */
+    @keyframes remove-right {
+        0% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(120%);
+        }
+    }
+
+    /* #endregion */
+
     /* #region fade-in: aumenta a opacidade */
     @keyframes fade-in {
         0% {
@@ -21,6 +73,32 @@
 
         100% {
             opacity: 0;
+        }
+    }
+
+    /* #endregion */
+
+    /* #region zoom-in: diminui o zoom */
+    @keyframes zoom-in {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* #endregion */
+
+    /* #region zoom-out: aumenta o zoom */
+    @keyframes zoom-out {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
         }
     }
 
@@ -78,6 +156,10 @@
 
     /* #endregion */
 
+
+
+
+
     /* #region unfold-out: desdobra para fora */
     @keyframes unfold-out {
         0% {
@@ -112,32 +194,6 @@
 
     /* #endregion */
 
-    /* #region zoom-out: aumenta o zoom */
-    @keyframes zoom-out {
-        0% {
-            transform: scale(1);
-        }
-
-        100% {
-            transform: scale(0);
-        }
-    }
-
-    /* #endregion */
-
-    /* #region zoom-in: diminui o zoom */
-    @keyframes zoom-in {
-        0% {
-            transform: scale(0);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    /* #endregion */
-
     /* #region increase-scale: aumenta a escala */
     @keyframes increase-scale {
         0% {
@@ -159,58 +215,6 @@
 
         100% {
             transform: scale(.85);
-        }
-    }
-
-    /* #endregion */
-
-    /* #region remove-up: remove para cima */
-    @keyframes remove-up {
-        0% {
-            transform: translateY(0px);
-        }
-
-        100% {
-            transform: translateY(-120%);
-        }
-    }
-
-    /* #endregion */
-
-    /* #region remove-down: remove para baixo */
-    @keyframes remove-down {
-        0% {
-            transform: translateY(0px);
-        }
-
-        100% {
-            transform: translateY(120%);
-        }
-    }
-
-    /* #endregion */
-
-    /* #region remove-left: remove para a esquerda */
-    @keyframes remove-left {
-        0% {
-            transform: translateX(0px);
-        }
-
-        100% {
-            transform: translateX(-120%);
-        }
-    }
-
-    /* #endregion */
-
-    /* #region remove-right: remove para a direita */
-    @keyframes remove-right {
-        0% {
-            transform: translateX(0px);
-        }
-
-        100% {
-            transform: translateX(120%);
         }
     }
 
@@ -288,6 +292,37 @@
 
     /* #region Animation Classes -----------------------*/
 
+    /* #region modify pseudo element parent */
+    .modify-parent-in::after {
+        display: block;
+        animation: fade-in 700ms forwards;
+    }
+
+    .modify-parent-out::after {
+        animation: fade-out 700ms forwards;
+    }
+
+    /* #endregion */
+
+    /* #region remove effects */
+    .remove-up {
+        animation: remove-up.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-down {
+        animation: remove-down .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-left {
+        animation: remove-left .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    .remove-right {
+        animation: remove-right .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    }
+
+    /* #endregion */
+
     /* #region fade */
     .fade-in {
         animation: fade-in 700ms forwards;
@@ -296,55 +331,82 @@
     .fade-out {
         animation: fade-out 500ms forwards;
     }
+
     /* #endregion */
 
     /* #region zoom */
-    .zoom-in{
-        animation: zoom-in .3s .1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
-        /* transform: translate(-50%, -50%) !important; */
-
+    .zoom-in {
+        animation: zoom-in .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
     }
 
-    .zoom-out{
+    .card-img:has(> .zoom-in)::after {
+        display: block;
+        animation: fade-in 700ms forwards;
+    }
+
+    .zoom-out {
         animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 500ms forwards;
     }
+
+    .card-img:has(> .zoom-out)::after {
+        display: none;
+        animation: fade-out 700ms forwards;
+    }
+
     /* #endregion */
 
-
-
-
-
-
-    
-    /* #region remove effects */
-    .remove-up {
-        animation: remove-up.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    /* #region slide */
+    .slide-up {
+        animation: slide-up 200ms forwards, fade-in 200ms forwards;
     }
 
-    .remove-down {
-        animation: remove-down.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    .slide-down {
+        animation: slide-down 200ms forwards, fade-in 200ms forwards;
     }
 
-    .remove-left {
-        animation: remove-left.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    .slide-left {
+        animation: slide-left 200ms forwards, fade-in 200ms forwards;
     }
 
-    .remove-right {
-        animation: remove-right.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+    .slide-right {
+        animation: slide-right 200ms forwards, fade-in 200ms forwards;
     }
+
+    /* #region slide and scale */
+    .slide-up-scale {
+        animation: slide-up 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-down-scale {
+        animation: slide-down 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-left-scale {
+        animation: slide-left 700ms forwards, fade-in 700ms forwards;
+    }
+
+    .slide-right-scale {
+        animation: slide-right 700ms forwards, fade-in 700ms forwards;
+    }
+
+    /* #endregion */
 
     /* #endregion */
 
     /* #region scale */
-    .increase-scale {
-        animation: increase-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-    }
-
     .decrease-scale {
         animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
     }
 
+    .increase-scale {
+        animation: increase-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+
     /* #endregion */
+
+
+
+
 
     /* #region explosion */
     .increase-explosion {
@@ -451,55 +513,7 @@
 
     /* #endregion */
 
-    /* #region slide up and fade */
-    .slide-up-fade {
-        animation: slide-up 200ms forwards, fade-in 200ms forwards;
-    }
 
-    .slide-up-fade[open] {
-        animation: slide-up 700ms forwards, fade-in 700ms forwards;
-    }
-
-    .slide-up-fade[open]::backdrop {
-        animation: fade-in 700ms forwards;
-    }
-
-    .slide-up-fade[closing] {
-        inset: 0;
-        pointer-events: none;
-        animation: fade-out 500ms forwards;
-    }
-
-    .slide-up-fade[closing]::backdrop {
-        animation: fade-out 500ms forwards;
-    }
-
-    /* #endregion */
-
-    /* #region slide up and scale */
-    .slide-up-scale {
-        animation: slide-up 700ms forwards, fade-in 700ms forwards;
-    }
-
-    .slide-up-scale[open] {
-        animation: slide-up 700ms forwards, fade-in 700ms forwards;
-    }
-
-    .slide-up-scale[open]::backdrop {
-        animation: fade-in 700ms forwards;
-    }
-
-    .slide-up-scale[closing] {
-        inset: 0;
-        pointer-events: none;
-        animation: fade-out 500ms forwards;
-    }
-
-    .slide-up-scale[closing]::backdrop {
-        animation: fade-out 500ms forwards;
-    }
-
-    /* #endregion */
 
     /* #region slide up and overlap */
     .slide-up-overlap {
@@ -569,56 +583,6 @@
     }
 
     .slide-down-remove-down[closing]::backdrop {
-        animation: fade-out 500ms forwards;
-    }
-
-    /* #endregion */
-
-    /* #region slide left and fade */
-    .slide-left-fade {
-        animation: slide-left 200ms forwards, fade-in 200ms forwards;
-    }
-
-    .slide-left-fade[open] {
-        animation: slide-left 700ms forwards, fade-in 700ms forwards;
-    }
-
-    .slide-left-fade[open]::backdrop {
-        animation: fade-in 700ms forwards;
-    }
-
-    .slide-left-fade[closing] {
-        inset: 0;
-        pointer-events: none;
-        animation: fade-out 500ms forwards;
-    }
-
-    .slide-left-fade[closing]::backdrop {
-        animation: fade-out 500ms forwards;
-    }
-
-    /* #endregion */
-
-    /* #region slide right and fade */
-    .slide-right-fade {
-        animation: slide-right 200ms forwards, fade-in 200ms forwards;
-    }
-
-    .slide-right-fade[open] {
-        animation: slide-right 700ms forwards, fade-in 700ms forwards;
-    }
-
-    .slide-right-fade[open]::backdrop {
-        animation: fade-in 700ms forwards;
-    }
-
-    .slide-right-fade[closing] {
-        inset: 0;
-        pointer-events: none;
-        animation: fade-out 500ms forwards;
-    }
-
-    .slide-right-fade[closing]::backdrop {
         animation: fade-out 500ms forwards;
     }
 

@@ -1,0 +1,62 @@
+/* #region bell notification button */
+#bell {
+    height: 60px;
+    width: 60px;
+    box-shadow: -1px 2px 10px #999;
+    background: #7844E8;
+    display: none;
+}
+
+#bell:hover {
+    background: #5b34af;
+    cursor: pointer;
+}
+
+#bell:hover #notifications-count {
+    background-color: #b92b20;
+}
+
+#bell #bell-border {
+    height: 59px;
+    width: 59px;
+    border: 1px solid #7844E8 !important;
+
+    box-shadow: 2px 2px 5px #ccc, -2px -2px 5px #ccc;
+}
+
+#bell .bell-icon {
+    color: white;
+    font-size: 20px;
+}
+
+#bell,
+#bell #bell-border,
+#bell .bell-icon {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bell #notifications-count {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 25px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #da3225;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 2px #32333b38;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* #endregion */
+
+/* #region card-notification */
+
+/* #endregion */
+/* #endregion */

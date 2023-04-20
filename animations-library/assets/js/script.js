@@ -150,36 +150,89 @@ function dialogManipulation(id, effect) {
 
 function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); };
 
-function manipulateImage() {
+async function animateTag(Tag_id, open_animation, close_animation) {
     const
-        buttons = document.querySelectorAll(".animation"),
-        imgs = document.querySelectorAll(".card-img");
+        btn_group = document.querySelector("#button-group"),
+        card = document.querySelector(`#${Tag_id}`);
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
+    if (!(card == null)) {
+        const btn_close = card.querySelectorAll(".btn-close");
 
-            // #region verify animation class
-            if (btn.classList.contains("fades")) classModify("fade");
-            if (btn.classList.contains("zoom")) classModify("zoom");
-            // #endregion
-        });
-    });
+        document.addEventListener("keydown", (event) => event.code === "Escape" ? closeCard() : null);
 
-    async function classModify(className) {
-        imgs.forEach(img => {
-            if (img.classList.contains(`${className}-in`)) {
-                img.classList.add(`${className}-out`);
-                img.classList.remove(`${className}-in`);
-            }
-            else {
-                img.classList.add(`${className}-in`);
-                img.classList.remove(`${className}-out`);
-            };
-        });
+        btn_close.forEach(btn => btn.addEventListener("click", () => closeCard()));
 
-        await delay(500);
+        card.classList.contains(open_animation) ? closeCard() : openCard();
 
-        imgs.forEach(img => img.classList.remove(`${className}-out`));
+        function openCard() {
+            card.style = ("display:flex");
+
+            card.classList.add(open_animation);
+            card.classList.remove(close_animation);
+
+            card.parentElement.classList.add("modify-parent-in");
+            card.parentElement.classList.remove("modify-parent-out");
+
+            if (open_animation === "slide-up-scale"
+                || open_animation === "slide-down-scale"
+                || open_animation === "slide-lefht-scale"
+                || open_animation === "slide-right-scale") btn_group.classList.add("decrease-scale");
+        };
+
+        async function closeCard() {
+            card.classList.add(close_animation);
+            card.classList.remove(open_animation);
+
+            card.parentElement.classList.add("modify-parent-out");
+            card.parentElement.classList.remove("modify-parent-in");
+
+            if (btn_group.classList.contains("decrease-scale"))
+                btn_group.classList.add("increase-scale"), btn_group.classList.remove("decrease-scale");
+
+            await delay(300);
+            card.style = ("");
+            card.classList.remove(close_animation);
+            btn_group.classList.remove("increase-scale");
+
+            await delay(500);
+            card.parentElement.classList.remove("modify-parent-out");
+        };
+
+
+        // #region first version
+
+        // if (!card.classList.contains(open_animation)) {
+        //     card.classList.add(open_animation);
+        //     card.classList.remove(close_animation);
+
+        //     card.parentElement.classList.add("modify-parent-in");
+        //     card.parentElement.classList.remove("modify-parent-out");
+
+        //     if (open_animation === "slide-up-scale"
+        //         || open_animation === "slide-down-scale"
+        //         || open_animation === "slide-lefht-scale"
+        //         || open_animation === "slide-right-scale") btn_group.classList.add("decrease-scale");
+        // };
+
+        // async function closeCard() {
+        //     if (card.classList.contains(open_animation)) {
+        //         card.classList.add(close_animation);
+        //         card.classList.remove(open_animation);
+
+        //         card.parentElement.classList.add("modify-parent-out");
+        //         card.parentElement.classList.remove("modify-parent-in");
+
+        //         if (btn_group.classList.contains("decrease-scale"))
+        //             btn_group.classList.add("increase-scale"), btn_group.classList.remove("decrease-scale");
+
+        //         await delay(500);
+        //         card.style = ("");
+        //         card.classList.remove(close_animation);
+        //         btn_group.classList.remove("increase-scale");
+        //         card.parentElement.classList.remove("modify-parent-out");
+        //     };
+        // };
+
+        // #endregion
     };
-
-} manipulateImage();
+} animateTag();
