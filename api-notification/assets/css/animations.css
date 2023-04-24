@@ -1,0 +1,223 @@
+/* #region KEYFRAMES */
+
+/* #region fade-in: aumenta a opacidade */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* #endregion */
+
+/* #region fade-out: diminui a opacidade */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* #endregion */
+
+/* #region zoom-in: aumenta o zoom */
+@keyframes zoom-in {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* #endregion */
+
+/* #region zoom-out: diminui o zoom */
+@keyframes zoom-out {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* #endregion */
+
+/* #region slide-left: desliza para a esquerda */
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* #endregion */
+
+/* #region slide-right: desliza para a direita */
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* #endregion */
+
+/* #region remove-left: remove para a esquerda */
+@keyframes remove-left {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-120%);
+    }
+}
+
+/* #endregion */
+
+/* #region remove-right: remove para a direita */
+@keyframes remove-right {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #region ANIMATIONS */
+
+/* #region Bell Button Animations */
+
+/* #region bell keyFrames */
+@keyframes col {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    10% {
+        transform: scale(1.1) translate(0, 0);
+    }
+
+    75% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+
+}
+
+@keyframes bord-pop {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.9);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.9);
+        opacity: 0;
+    }
+
+}
+
+@keyframes bell-ring {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    5%,
+    15% {
+        transform: translate(-50%, -50%) rotate(25deg);
+    }
+
+    10%,
+    20% {
+        transform: translate(-50%, -50%) rotate(-25deg);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+/* #endregion */
+
+/* #region bell animations */
+.animate-bell {
+    animation: col 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+}
+
+.animate-bell-border {
+    animation: bord-pop 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+}
+
+.animate-bell-icon {
+    animation: bell-ring 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+}
+
+.zoom-in {
+    animation: zoom-in .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-in 700ms forwards;
+}
+
+.zoom-out {
+    animation: zoom-out .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 500ms forwards;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #region Slide */
+.slide-left {
+    animation: slide-left 200ms forwards, fade-in 200ms forwards;
+}
+
+.slide-right {
+    animation: slide-right 200ms forwards, fade-in 200ms forwards;
+}
+
+/* #endregion */
+
+/* #region Remove */
+.remove-left {
+    animation: remove-left .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+}
+
+.remove-right {
+    animation: remove-right .7s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards, fade-out 700ms forwards;
+}
+
+/* #endregion */
+
+/* #endregion */
