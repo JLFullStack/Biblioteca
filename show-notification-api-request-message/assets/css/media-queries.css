@@ -1,0 +1,39 @@
+/*#region CSS devices midia queries */
+/* -- Tipycal Devices Breakpoints --
+    * small screens : up to 600px
+    * mobile        : from 600px to 768px
+    * tablet        : from 768px to 992px
+    * desktop       : from 992px to 1200px
+    * large screens : above 1200px 
+    * orientation landscape : horizontal orientation
+    * orientation portrait  : vertical orientation
+    */
+/*#endregion*/
+
+/*#region Cell Phone --------------------------------------------------- */
+@media only screen and (max-width: 767px) {}
+
+/*#endregion*/
+
+/*#region Cell Phone and landscape orientation -------------------------- */
+@media only screen and (max-width: 767px) and (orientation: landscape) {}
+
+/* #endregion */
+
+/* #region Tablet ------------------------------------------------------ */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    #msg-view-card {
+        width: 80%;
+    }
+}
+
+/* #endregion */
+
+/* #region Desktop and Bigger Screens ---------------------------------- */
+@media only screen and (min-width: 993px) {
+    #msg-view-card {
+        max-width: 720px;
+    }
+}
+
+/* #endregion*/

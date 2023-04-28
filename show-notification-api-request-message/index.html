@@ -14,65 +14,33 @@
     <link rel="stylesheet" href="../../common/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/media-queries.css" />
     <!-- endregion -->
 </head>
 
 <body>
-    <!-- #region cartão de visualização de novas menssagens -->
+    <!-- #region message view card -->
     <section id="msg-view-card">
-        <card class="align-items-center flex-column">
-            <div class="card-header d-flex">
-                <strong class="text-white p-2 fs-6">Menssagens Recebidas</strong>
-                <a class="btn btn-close text-gray pt-3 pe-2 pb-3 ms-auto"></a>
+        <card class="m-2">
+            <div class="card-header d-flex p-3">
+                <strong class="text-white ps-2 fs-6">Menssagens Recebidas</strong>
+                <a class="btn btn-close text-gray pe-2 ms-auto"></a>
             </div>
 
             <div class="card-body">
-                <div class="accordion">
-                    <div class="accordion__item active">
-                        <div class="accordion-header">Menssagem 1</div>
-                        <div class="accordion-body">
-                            <div class="accordion-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi placeat
-                                distinctio dolor, amet magnam voluptatibus eos ex vero, sunt veritatis esse. Nostrum
-                                voluptatum et repudiandae vel sed, explicabo in?
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion__item">
-                        <div class="accordion-header">Menssagem 2</div>
-                        <div class="accordion-body">
-                            <div class="accordion-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi placeat
-                                distinctio dolor, amet magnam voluptatibus eos ex vero, sunt veritatis esse. Nostrum
-                                voluptatum et repudiandae vel sed, explicabo in?
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion__item">
-                        <div class="accordion-header">Menssagem 2</div>
-                        <div class="accordion-body">
-                            <div class="accordion-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi placeat
-                                distinctio dolor, amet magnam voluptatibus eos ex vero, sunt veritatis esse. Nostrum
-                                voluptatum et repudiandae vel sed, explicabo in?
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="accordion"></div>
             </div>
         </card>
     </section>
     <!-- #endregion -->
 
-    <!-- #region botão de sino de notificação -->
+    <!-- #region notification bell button -->
     <a class="m-4 rounded-circle animate-bell" id="bell">
         <div class="animate-bell-border" id="bell-border"></div>
 
         <span id="notifications-count"></span>
 
-        <!-- #region ico notification -->
+        <!-- #region icon notification -->
         <svg class="bi bi-bell-fill mb-1 bell-icon animate-bell-icon" xmlns="http://www.w3.org/2000/svg" width="20"
             height="20" fill="currentColor" viewBox="0 0 16 16">
             <path
@@ -82,7 +50,7 @@
     </a>
     <!-- #endregion -->
 
-    <!-- #region cartão notificação de nova menssagem -->
+    <!-- #region message notification card -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="notification-card" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header bg-success text-white">
