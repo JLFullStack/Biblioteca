@@ -19,6 +19,8 @@
             if (request.ok) {
                 const response = await request.json(); // desserialize json result
 
+                console.log(response);
+
                 count++;
                 newMessage = response.logradouro;
                 notifyNewMessage();

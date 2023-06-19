@@ -1,0 +1,43 @@
+<script>
+    function name(rg) {
+        rg = rg.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        let arr = rg.split("");
+
+        rg = "";
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr.length >= 9) {
+                if (i < (arr.length - 1)) rg += arr[i];
+            }
+            else rg += arr[i];
+        };
+
+        if (arr.length >= 9) rg += "-" + arr.pop();
+
+        return rg;
+    }
+
+    function formatarRG(rg) {      
+        rg = rg.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        if (rg.length == 8)
+            rg = rg.replace(/^(\d{2})(\d{3})(\d{3})$/, '$1.$2.$3');
+
+
+        if (rg.length == 9)
+            rg = rg.replace(/^(\d{2})(\d{3})(\d{3})(\w{1})$/, '$1.$2.$3-$4');
+
+        return rg;
+    };
+
+    function formatarCPF(cpf) {
+        cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+        if (cpf.length > 11) cpf = cpf.slice(0, 11); // Litima os números para 11 caracteres
+
+        if (cpf.length == 11) cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+
+        return cpf;
+    };
+</script>
