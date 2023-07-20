@@ -1,5 +1,90 @@
 .progress {
     width: 60%;
-    height: 5px;
-    bottom: 39%;
+    height: 4px;
+    bottom: 55%;
+}
+
+/* #mobile-step-progress-bar #radialProgressBar {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(closest-side, white 80%, transparent 85% 100%), 
+    conic-gradient(#198754 var(--progress), rgb(236, 236, 236) 0);  
+} */
+
+/* #mobile-step-progress-bar #radialProgressBar {
+    block-size: 20vmin;
+    inline-size: 20vmin;
+    min-inline-size: 90px;
+    min-block-size: 90px;
+    font-size: max(5vmin, 1.4rem);
+}
+
+#mobile-step-progress-bar #radialProgressBar::before {
+    --hue: 120;
+    --holesize: 55%;
+    --track-bg: hsl(170 34% 92%);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: -1;
+    background: conic-gradient(
+        hsl(var(--hue) 100% 40%),
+        hsl(var(--hue) 100% 30%),
+        hsl(var(--hue) 100% 40%) var(--progress, 0%),
+        var(--track-bg) var(--progress, 0%) 100%
+    );
+
+    mask-image: radial-gradient(
+    transparent var(--holesize),
+    black calc(var(--holesize) + 0.5px)
+    );
+} */
+
+#circle-wrap,
+#mask-1,
+#mask-2,
+.full {
+    width: 80px;
+    height: 80px;
+}
+
+#mask-1,
+#mask-2 {
+    clip: rect(0px, 80px, 80px, 40px);
+}
+
+#inside-circle {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#mask-1,
+.full {
+    animation: rotate-radial ease-in-out 3s;
+    transform: rotate(var(--progress));
+}
+
+.full {
+    clip: rect(0px, 40px, 80px, 0px);
+    background-color: #198754;
+}
+
+@keyframes rotate-radial {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(var(--progress));
+    }
+}
+
+.update-radial-full {
+    animation: rotate-radial ease-in-out 3s;
 }

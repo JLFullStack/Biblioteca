@@ -11,7 +11,11 @@
 /*#endregion*/
 
 /*#region Cell Phone --------------------------------------------------- */
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 767px) {
+    #desktop-step-progress-bar {
+        display: none !important;
+    }
+}
 /*#endregion*/
 
 /*#region Cell Phone and landscape orientation -------------------------- */
@@ -20,11 +24,16 @@
 
 /* #region Tablet ------------------------------------------------------ */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
+    #mobile-step-progress-bar {
+        display: none !important;
+    }
 }
 /* #endregion */
 
 /* #region Desktop and Bigger Screens ---------------------------------- */
 @media only screen and (min-width: 993px) {
-
+    #mobile-step-progress-bar {
+        display: none !important;
+    }
 }
 /* #endregion*/
