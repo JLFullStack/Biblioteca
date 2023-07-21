@@ -76,27 +76,15 @@
             </div>
             <!-- endregion -->
 
-            <!-- #region  Mobile Step Progress Bar -->
-            <!-- <div class="d-flex align-items-center justify-content-between" id="mobile-step-progress-bar">
-                <div class="d-flex justify-content-center align-items-center rounded-circle m-2 position-relative" id="radialProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div class="fw-bold text-secondary">
-                        <span id="nrCurrentContent"></span> 
-                        <span id="nrContents"></span>
-                    </div> 
-                </div>
-                <div class="d-flex flex-column align-items-end m-2">
-                    <span class="fw-bold text-secondary fs-4" id="content-current-step"></span>
-                    <span class="fw-medium fst-italic text-secondary fs-6" id="content-next-step"></span>
-                </div>
-            </div> -->
+            <!-- #region Mobile Step Progress Bar -->
             <div class="d-flex align-items-center justify-content-between" id="mobile-step-progress-bar">
                 <div class="d-flex justify-content-center align-items-center rounded-circle m-2" id="radialProgressBar">
-                    <div class="bg-secondary bg-opacity-25 position-relative rounded-circle" id="circle-wrap">
+                    <div class="bg-secondary bg-opacity-25 position-relative rounded-circle" id="radial-wrap">
                         <div class="position-absolute" id="mask-1">
-                            <div class="full rounded-circle position-absolute"></div>
+                            <div class="full rounded-circle position-absolute bg-success"></div>
                         </div>
                         <div class="position-absolute" id="mask-2">
-                            <div class="full rounded-circle position-absolute"></div>
+                            <div class="full rounded-circle position-absolute bg-success"></div>
                         </div>
                         <div class="d-flex justify-content-center align-items-center text-secondary bg-white position-absolute rounded-circle fw-bold fs-4 z-3" id="inside-circle">
                             <span id="nrCurrentContent"></span> 

@@ -12,10 +12,11 @@
             btnNext = document.querySelector("#progress-buttons #btn-next");
 
         let nrCurrentContent = 1,
-            vlMobileProgressBar = 100/(steps.length),
+            currentValueRotation = 0,
+            nextValueRotation = 100/(steps.length),
             vlDesktopProgressBar = parseInt(desktopProgressBar.style.width.replace("%", ""));
 
-        updateMobileProgressBar(nrCurrentContent, steps.length, vlMobileProgressBar); //adds the initial values of the mobile progress bar
+        updateMobileProgressBar(nrCurrentContent, steps.length, currentValueRotation, nextValueRotation); //adds the initial values of the mobile progress bar
 
         // #region Next button click event  
         btnNext.addEventListener("click", () => {
@@ -29,7 +30,7 @@
 
             desktopProgressBar.style.width = `${vlDesktopProgressBar += 100/(steps.length - 1)}%`; // modifies the desktop progress bar value
 
-            updateMobileProgressBar(nrCurrentContent += 1, steps.length, vlMobileProgressBar += 100/(steps.length)); // modifies the mobile progress bar value
+            updateMobileProgressBar(nrCurrentContent += 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation += 100/(steps.length)); // modifies the mobile progress bar value
 
             if(nextStep != null ) {
                 // modifies the step in checking
@@ -38,7 +39,7 @@
                 nextStep.classList.add("checking");
 
                 // modifies background color and animates progress bar icons
-                async function animateIcons () {
+                const animateIcons = async () => {
                     currentStep.firstElementChild.classList.remove("bg-warning");
                     currentStep.firstElementChild.classList.add("bg-success");
                     currentStep.firstElementChild.classList.add("decrease-scale");
@@ -51,7 +52,8 @@
 
                     await delay(100);
                     currentStep.firstElementChild.classList.remove("decrease-scale");
-                } animateIcons();
+                } 
+                animateIcons();
             };
         });
         // #endregion
@@ -71,7 +73,7 @@
             if(vlDesktopProgressBar < 0) vlDesktopProgressBar = 0;
             desktopProgressBar.style.width = `${vlDesktopProgressBar}%`;
 
-            updateMobileProgressBar(nrCurrentContent -= 1, steps.length, vlMobileProgressBar -= 100/(steps.length)); // modifies the mobile progress bar value
+            updateMobileProgressBar(nrCurrentContent -= 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation -= 100/(steps.length)); // modifies the mobile progress bar value
 
             if(previousStep != null ) {
                 //modifies the step in checking
@@ -80,7 +82,7 @@
                 previousStep.classList.add("checking");
 
                 // modifies background color and animates progress bar icons
-                async function animateIcons () {
+                const animateIcons = async () => {
                     currentStep.firstElementChild.classList.remove("bg-warning");
                     currentStep.firstElementChild.classList.add("bg-secondary");
                     currentStep.firstElementChild.classList.add("decrease-scale");
@@ -93,19 +95,22 @@
 
                     await delay(100);
                     currentStep.firstElementChild.classList.remove("decrease-scale");
-                } animateIcons();
+                } 
+                animateIcons();
             };
         });
         // #endregion
     } 
     animateProgressBar();
 
-    function updateMobileProgressBar(nrCurrentContent, nrContents, vlMobileProgressBar) {
+    async function updateMobileProgressBar(nrCurrentContent, nrContents, currentValueRotation, nextValueRotation) {
+        // #region Updates the values
         const 
             steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
             contentNextStep = document.querySelector("#content-next-step"),
-            radialGradient = "radial-gradient(closest-side, white 80%, transparent 85% 100%)",
-            conicGradient = `conic-gradient(rgb(49, 133, 0) ${vlMobileProgressBar}%, rgb(236, 236, 236) 0)`;
+            radialProgressBar = document.querySelector("#radialProgressBar"),
+            mask1 = document.querySelector("#mask-1"),
+            fulls = document.querySelectorAll(".full");
 
         document.querySelector("#nrCurrentContent").innerHTML = nrCurrentContent; // updates the current content number
         document.querySelector("#nrContents").innerHTML = ` of ${nrContents}`; // updates the number of contents
@@ -114,9 +119,25 @@
         if (steps[nrCurrentContent] != undefined) {
             contentNextStep.style = "";
             contentNextStep.innerHTML = `Next: ${steps[nrCurrentContent].innerText}`; // updates the next content
-        } else contentNextStep.style = "display:none";
+        } 
+        else contentNextStep.style = "display:none";
+        // #endregion
 
-        document.querySelector("#radialProgressBar").style.setProperty('--progress', `${(180/100)*vlMobileProgressBar}deg`);
+        // #region adds the animations
+        let 
+            currentValue = (180/100)*currentValueRotation,
+            nextValue = (180/100)*nextValueRotation;
+
+        radialProgressBar.style.setProperty('--current-value', `${currentValue}deg`);
+        radialProgressBar.style.setProperty('--next-value', `${nextValue}deg`);
+
+        mask1.classList.add("update-radial-progress-bar");
+        fulls.forEach(full => full.classList.add("update-radial-progress-bar"));
+
+        await delay(500);
+        mask1.classList.remove("update-radial-progress-bar");
+        fulls.forEach(full => full.classList.remove("update-radial-progress-bar"));
+        // #endregion
     };
 })();
 // #endregion

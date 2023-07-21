@@ -18,6 +18,15 @@
         transform: scale(1);
     }
 }
+
+@keyframes update-radial-progress-bar {
+    0% {
+        transform: rotate(var(--current-value));
+    }
+    100% {
+        transform: rotate(var(--next-value));
+    }
+}
 /* #endregion */
 
 /* #region Animation Classes */
@@ -27,5 +36,9 @@
 
 .decrease-scale {
     animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.update-radial-progress-bar {
+    animation: update-radial-progress-bar .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 /* #endregion */
