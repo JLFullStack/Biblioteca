@@ -18,11 +18,11 @@
         <section class="mt-3" id="responsive-step-progress-bar">
             <!-- #region Desktop Step Progress Bar -->
             <div class="d-flex flex-column align-items-center position-relative" id="desktop-step-progress-bar">
-                <div class="progress z-0 position-absolute start-50 translate-middle-x" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress z-n1 position-absolute start-50 translate-middle-x" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar bg-success" id="progress-bar" style="width: 0%"></div>
                 </div>
     
-                <ol class="container-fluid d-flex justify-content-evenly align-items-end z-1">
+                <ol class="container-fluid d-flex justify-content-evenly align-items-end">
                     <!-- #region Step 1 -->
                     <li class="d-flex flex-column align-items-center checking">
                         <span class="bg-warning increase-scale rounded-circle border border-3 border-white text-white bold p-1 mt-3">
@@ -86,7 +86,7 @@
                         <div class="position-absolute" id="mask-2">
                             <div class="full rounded-circle position-absolute bg-success"></div>
                         </div>
-                        <div class="d-flex justify-content-center align-items-center text-secondary bg-white position-absolute rounded-circle fw-bold fs-4 z-3" id="inside-circle">
+                        <div class="d-flex justify-content-center align-items-center text-secondary bg-white position-absolute rounded-circle fw-bold fs-5 z-3" id="inside-circle">
                             <span id="nrCurrentContent"></span> 
                             <span id="nrContents"></span>
                         </div> 
@@ -101,17 +101,17 @@
         </section>
 
         <!-- #region Progress Buttons -->
-        <div class="d-flex align-items-center justify-content-center position-absolute bottom-0 start-50 translate-middle-x mb-5" id="progress-buttons">
-            <button class="btn btn-secondary d-flex align-items-center m-4" type="button" id="btn-previous" disabled="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+        <div class="d-flex position-absolute bottom-0 start-50 translate-middle-x mb-5" id="progress-buttons">
+            <button class="btn btn-secondary d-flex align-items-center me-4" type="button" id="btn-previous" disabled="true">
+                <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                 </svg>
                 Previous
             </button>
-            <button class="btn btn-primary d-flex align-items-center px-4 m-4" type="button" id="btn-next">
+            <button class="btn btn-primary d-flex align-items-center px-4 ms-4" type="button" id="btn-next">
                 Next
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
                     <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg>

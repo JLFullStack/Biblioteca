@@ -19,11 +19,20 @@
         updateMobileProgressBar(nrCurrentContent, steps.length, currentValueRotation, nextValueRotation); //adds the initial values of the mobile progress bar
 
         // #region Next button click event  
-        btnNext.addEventListener("click", () => {
+        btnNext.addEventListener("click", async () => {
             const 
                 filteredStep = [...steps].filter(step => step.classList.contains("checking")),
-                currentStep = filteredStep[0],
+                currentStep = filteredStep[0];
+            
+            let nextStep;
+
+            try {
                 nextStep = filteredStep[0].nextElementSibling;
+            } catch (error) {
+                return;
+            }
+
+            if (!currentStep.classList.contains("checking")) return;
 
             if (currentStep == steps[0]) btnPrevious.disabled = false; //anable previous button
             if (nextStep == steps[steps.length - 1]) btnNext.disabled = true; //disable next button
@@ -33,37 +42,44 @@
             updateMobileProgressBar(nrCurrentContent += 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation += 100/(steps.length)); // modifies the mobile progress bar value
 
             if(nextStep != null ) {
+                // modifies background color and animates progress bar icons
+                currentStep.firstElementChild.classList.remove("bg-warning");
+                currentStep.firstElementChild.classList.add("bg-success");
+                currentStep.firstElementChild.classList.add("decrease-scale");
+                currentStep.firstElementChild.classList.remove("increase-scale");
+
                 // modifies the step in checking
                 currentStep.classList.remove("checking");
+
+                await delay(250);
                 currentStep.classList.add("checked");
                 nextStep.classList.add("checking");
 
-                // modifies background color and animates progress bar icons
-                const animateIcons = async () => {
-                    currentStep.firstElementChild.classList.remove("bg-warning");
-                    currentStep.firstElementChild.classList.add("bg-success");
-                    currentStep.firstElementChild.classList.add("decrease-scale");
-                    currentStep.firstElementChild.classList.remove("increase-scale");
+                nextStep.firstElementChild.classList.remove("bg-secondary");
+                nextStep.firstElementChild.classList.add("bg-warning");
+                nextStep.firstElementChild.classList.add("increase-scale");
 
-                    await delay(350);
-                    nextStep.firstElementChild.classList.remove("bg-secondary");
-                    nextStep.firstElementChild.classList.add("bg-warning");
-                    nextStep.firstElementChild.classList.add("increase-scale");
-
-                    await delay(100);
-                    currentStep.firstElementChild.classList.remove("decrease-scale");
-                } 
-                animateIcons();
+                await delay(100);
+                currentStep.firstElementChild.classList.remove("decrease-scale");
             };
         });
         // #endregion
 
         // #region Previous button click event 
-        btnPrevious.addEventListener("click", () => {
+        btnPrevious.addEventListener("click", async () => {
             const 
                 filteredStep = [...steps].filter(step => step.classList.contains("checking")),
-                currentStep = filteredStep[0],
+                currentStep = filteredStep[0];
+
+            let previousStep;
+
+            try {
                 previousStep = filteredStep[0].previousElementSibling;
+            } catch (error) {
+                return;
+            }
+
+            if (!currentStep.classList.contains("checking")) return;
 
             if (currentStep == steps[steps.length - 1]) btnNext.disabled = false; //anable next button
             if (previousStep == steps[0]) btnPrevious.disabled = true; //disable previous button
@@ -76,27 +92,25 @@
             updateMobileProgressBar(nrCurrentContent -= 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation -= 100/(steps.length)); // modifies the mobile progress bar value
 
             if(previousStep != null ) {
+                // modifies background color and animates progress bar icons
+                currentStep.firstElementChild.classList.remove("bg-warning");
+                currentStep.firstElementChild.classList.add("bg-secondary");
+                currentStep.firstElementChild.classList.add("decrease-scale");
+                currentStep.firstElementChild.classList.remove("increase-scale");
+
                 //modifies the step in checking
                 currentStep.classList.remove("checking");
+
+                await delay(250);
                 previousStep.classList.remove("checked");
                 previousStep.classList.add("checking");
 
-                // modifies background color and animates progress bar icons
-                const animateIcons = async () => {
-                    currentStep.firstElementChild.classList.remove("bg-warning");
-                    currentStep.firstElementChild.classList.add("bg-secondary");
-                    currentStep.firstElementChild.classList.add("decrease-scale");
-                    currentStep.firstElementChild.classList.remove("increase-scale");
+                previousStep.firstElementChild.classList.remove("bg-success");
+                previousStep.firstElementChild.classList.add("bg-warning");
+                previousStep.firstElementChild.classList.add("increase-scale");
 
-                    await delay(350);
-                    previousStep.firstElementChild.classList.remove("bg-success");
-                    previousStep.firstElementChild.classList.add("bg-warning");
-                    previousStep.firstElementChild.classList.add("increase-scale");
-
-                    await delay(100);
-                    currentStep.firstElementChild.classList.remove("decrease-scale");
-                } 
-                animateIcons();
+                await delay(100);
+                currentStep.firstElementChild.classList.remove("decrease-scale");
             };
         });
         // #endregion
@@ -113,7 +127,7 @@
             fulls = document.querySelectorAll(".full");
 
         document.querySelector("#nrCurrentContent").innerHTML = nrCurrentContent; // updates the current content number
-        document.querySelector("#nrContents").innerHTML = ` of ${nrContents}`; // updates the number of contents
+        document.querySelector("#nrContents").innerHTML = `&nbspof ${nrContents}`; // updates the number of contents
         document.querySelector("#content-current-step").innerHTML = steps[nrCurrentContent - 1].innerText; // updates the current step
 
         if (steps[nrCurrentContent] != undefined) {
