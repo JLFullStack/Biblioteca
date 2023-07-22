@@ -19,12 +19,21 @@
     }
 }
 
-@keyframes update-radial-progress-bar {
+@keyframes update-radial-progress-bar-1 {
     0% {
         transform: rotate(var(--current-rotation-value));
     }
     100% {
-        transform: rotate(var(--next-rotation-value));
+        transform: rotate(var(--next-rotation-value));  
+    }
+}
+
+@keyframes update-radial-progress-bar-2 {
+    0% {
+        transform: rotate(var(--current-rotation-value));
+    }
+    100% {
+        transform: rotate(var(--next-rotation-value));  
     }
 }
 /* #endregion */
@@ -38,7 +47,11 @@
     animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-.update-radial-progress-bar {
-    animation: update-radial-progress-bar .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+.update-radial-progress-bar-1 {
+    animation: update-radial-progress-bar-1 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.update-radial-progress-bar-2 {
+    animation: update-radial-progress-bar-2 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 /* #endregion */

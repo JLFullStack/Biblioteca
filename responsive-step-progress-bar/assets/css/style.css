@@ -39,12 +39,6 @@
     clip: rect(0px, 80px, 80px, 40px);
 }
 
-#full-mask,
-#full,
-#half {
-    transform: rotate(var(--next-rotation-value));
-}
-
 #full,
 #half {
     clip: rect(0px, 40px, 80px, 0px);

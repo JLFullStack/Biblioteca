@@ -1,9 +1,6 @@
 (function () {
     "use strict";
 
-    // add a delay at specified local code
-    function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); };
-
     const animateStepProgressBar = () => {
         const 
             steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
@@ -97,21 +94,24 @@
         radialProgressBar.style.setProperty('--current-rotation-value', `${currentRotationValue}deg`);
         radialProgressBar.style.setProperty('--next-rotation-value', `${nextRotationValue}deg`);
 
-        fullMask.classList.add("update-radial-progress-bar");
-        full.classList.add("update-radial-progress-bar");
-        half.classList.add("update-radial-progress-bar");
+        if (!fullMask.classList.contains("update-radial-progress-bar-1")) {
+            fullMask.classList.remove("update-radial-progress-bar-2");
+            full.classList.remove("update-radial-progress-bar-2");
+            half.classList.remove("update-radial-progress-bar-2");
 
-        try {
-            const removeClassList = async () => {
-                await delay(300);
-                fullMask.classList.remove("update-radial-progress-bar");
-                full.classList.remove("update-radial-progress-bar");
-                half.classList.remove("update-radial-progress-bar");
-            }
-            removeClassList();
-        } catch (error) {
-            return;
-        };
+            fullMask.classList.add("update-radial-progress-bar-1");
+            full.classList.add("update-radial-progress-bar-1");
+            half.classList.add("update-radial-progress-bar-1");
+        } 
+        else {
+            fullMask.classList.remove("update-radial-progress-bar-1");
+            full.classList.remove("update-radial-progress-bar-1");
+            half.classList.remove("update-radial-progress-bar-1");
+
+            fullMask.classList.add("update-radial-progress-bar-2");
+            full.classList.add("update-radial-progress-bar-2");
+            half.classList.add("update-radial-progress-bar-2");
+        }
         // #endregion
     };
 })();
