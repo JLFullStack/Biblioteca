@@ -4,153 +4,114 @@
     // add a delay at specified local code
     function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); };
 
-    const animateProgressBar = () => {
+    const animateStepProgressBar = () => {
         const 
             steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
             desktopProgressBar = document.querySelector("#progress-bar"),
             btnPrevious = document.querySelector("#progress-buttons #btn-previous"),
             btnNext = document.querySelector("#progress-buttons #btn-next");
 
-        let nrCurrentContent = 1,
-            currentValueRotation = 0,
-            nextValueRotation = 100/(steps.length),
-            vlDesktopProgressBar = parseInt(desktopProgressBar.style.width.replace("%", ""));
+        let currentContentNumber = 1,
+            currentRotationValue = 0,
+            nextRotationValue = 100/(steps.length),
+            desktopProgressBarValue = parseInt(desktopProgressBar.style.width.replace("%", ""));
 
-        updateMobileProgressBar(nrCurrentContent, steps.length, currentValueRotation, nextValueRotation); //adds the initial values of the mobile progress bar
-
-        // #region Next button click event  
-        btnNext.addEventListener("click", async () => {
+        updateMobileProgressBar(currentContentNumber, currentRotationValue, nextRotationValue); //adds the initial values
+ 
+        btnNext.addEventListener("click", () => {
             const 
-                filteredStep = [...steps].filter(step => step.classList.contains("checking")),
-                currentStep = filteredStep[0];
-            
-            let nextStep;
+                currentStep = [...steps].filter(step => step.classList.contains("checking"))[0],
+                nextStep = currentStep.nextElementSibling;
 
-            try {
-                nextStep = filteredStep[0].nextElementSibling;
-            } catch (error) {
-                return;
-            }
+            btnPrevious.disabled = false; //anable the previous button
+            if (nextStep == steps[steps.length - 1]) btnNext.disabled = true; //disable the next button
 
-            if (!currentStep.classList.contains("checking")) return;
+            desktopProgressBar.style.width = `${desktopProgressBarValue += 100/(steps.length - 1)}%`; // modifies the width value
 
-            if (currentStep == steps[0]) btnPrevious.disabled = false; //anable previous button
-            if (nextStep == steps[steps.length - 1]) btnNext.disabled = true; //disable next button
+            // modifies the steps properts
+            currentStep.classList.remove("checking");
+            currentStep.classList.add("checked");
 
-            desktopProgressBar.style.width = `${vlDesktopProgressBar += 100/(steps.length - 1)}%`; // modifies the desktop progress bar value
+            nextStep.classList.remove("unchecked");
+            nextStep.classList.add("checking");
 
-            updateMobileProgressBar(nrCurrentContent += 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation += 100/(steps.length)); // modifies the mobile progress bar value
-
-            if(nextStep != null ) {
-                // modifies background color and animates progress bar icons
-                currentStep.firstElementChild.classList.remove("bg-warning");
-                currentStep.firstElementChild.classList.add("bg-success");
-                currentStep.firstElementChild.classList.add("decrease-scale");
-                currentStep.firstElementChild.classList.remove("increase-scale");
-
-                // modifies the step in checking
-                currentStep.classList.remove("checking");
-
-                await delay(250);
-                currentStep.classList.add("checked");
-                nextStep.classList.add("checking");
-
-                nextStep.firstElementChild.classList.remove("bg-secondary");
-                nextStep.firstElementChild.classList.add("bg-warning");
-                nextStep.firstElementChild.classList.add("increase-scale");
-
-                await delay(100);
-                currentStep.firstElementChild.classList.remove("decrease-scale");
-            };
+            updateMobileProgressBar(currentContentNumber += 1, 
+                                    currentRotationValue = nextRotationValue, 
+                                    nextRotationValue += 100/(steps.length));
         });
-        // #endregion
-
-        // #region Previous button click event 
-        btnPrevious.addEventListener("click", async () => {
+ 
+        btnPrevious.addEventListener("click", () => {
             const 
-                filteredStep = [...steps].filter(step => step.classList.contains("checking")),
-                currentStep = filteredStep[0];
+                currentStep = [...steps].filter(step => step.classList.contains("checking"))[0],
+                previousStep = currentStep.previousElementSibling;
 
-            let previousStep;
+            btnNext.disabled = false; //anable the next button
+            if (previousStep == steps[0]) btnPrevious.disabled = true; //disable the previous button
 
-            try {
-                previousStep = filteredStep[0].previousElementSibling;
-            } catch (error) {
-                return;
-            }
+            // modifies the width value
+            desktopProgressBarValue -= 100/(steps.length - 1);
+            if(desktopProgressBarValue < 0) desktopProgressBarValue = 0;
+            desktopProgressBar.style.width = `${desktopProgressBarValue}%`;
 
-            if (!currentStep.classList.contains("checking")) return;
+            // modifies the steps properts
+            currentStep.classList.remove("checking");
+            currentStep.classList.add("unchecked");
 
-            if (currentStep == steps[steps.length - 1]) btnNext.disabled = false; //anable next button
-            if (previousStep == steps[0]) btnPrevious.disabled = true; //disable previous button
+            previousStep.classList.remove("checked");
+            previousStep.classList.add("checking");
 
-            // modifies the desktop progress bar value
-            vlDesktopProgressBar -= 100/(steps.length - 1);
-            if(vlDesktopProgressBar < 0) vlDesktopProgressBar = 0;
-            desktopProgressBar.style.width = `${vlDesktopProgressBar}%`;
-
-            updateMobileProgressBar(nrCurrentContent -= 1, steps.length, currentValueRotation = nextValueRotation, nextValueRotation -= 100/(steps.length)); // modifies the mobile progress bar value
-
-            if(previousStep != null ) {
-                // modifies background color and animates progress bar icons
-                currentStep.firstElementChild.classList.remove("bg-warning");
-                currentStep.firstElementChild.classList.add("bg-secondary");
-                currentStep.firstElementChild.classList.add("decrease-scale");
-                currentStep.firstElementChild.classList.remove("increase-scale");
-
-                //modifies the step in checking
-                currentStep.classList.remove("checking");
-
-                await delay(250);
-                previousStep.classList.remove("checked");
-                previousStep.classList.add("checking");
-
-                previousStep.firstElementChild.classList.remove("bg-success");
-                previousStep.firstElementChild.classList.add("bg-warning");
-                previousStep.firstElementChild.classList.add("increase-scale");
-
-                await delay(100);
-                currentStep.firstElementChild.classList.remove("decrease-scale");
-            };
+            updateMobileProgressBar(currentContentNumber -= 1, 
+                                    currentRotationValue = nextRotationValue, 
+                                    nextRotationValue -= 100/(steps.length)); 
         });
-        // #endregion
     } 
-    animateProgressBar();
+    animateStepProgressBar();
 
-    async function updateMobileProgressBar(nrCurrentContent, nrContents, currentValueRotation, nextValueRotation) {
+    function updateMobileProgressBar(currentContentNumber, currentRotationValue, nextRotationValue) {
         // #region Updates the values
         const 
             steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
-            contentNextStep = document.querySelector("#content-next-step"),
-            radialProgressBar = document.querySelector("#radialProgressBar"),
-            mask1 = document.querySelector("#mask-1"),
-            fulls = document.querySelectorAll(".full");
+            nextStepContent = document.querySelector("#next-step-content"),
+            radialProgressBar = document.querySelector("#radial-progress-bar"),
+            fullMask = document.querySelector("#full-mask"),
+            full = document.querySelector("#full"),
+            half = document.querySelector("#half");
 
-        document.querySelector("#nrCurrentContent").innerHTML = nrCurrentContent; // updates the current content number
-        document.querySelector("#nrContents").innerHTML = `&nbspof ${nrContents}`; // updates the number of contents
-        document.querySelector("#content-current-step").innerHTML = steps[nrCurrentContent - 1].innerText; // updates the current step
+        document.querySelector("#current-content-number").innerHTML = currentContentNumber;
+        document.querySelector("#number-of-contents").innerHTML = `&nbspof ${steps.length}`;
+        document.querySelector("#current-step-content").innerHTML = steps[currentContentNumber - 1].innerText;
 
-        if (steps[nrCurrentContent] != undefined) {
-            contentNextStep.style = "";
-            contentNextStep.innerHTML = `Next: ${steps[nrCurrentContent].innerText}`; // updates the next content
+        if (steps[currentContentNumber] != undefined) {
+            nextStepContent.style = "";
+            nextStepContent.innerHTML = `Next: ${steps[currentContentNumber].innerText}`;
         } 
-        else contentNextStep.style = "display:none";
+        else nextStepContent.style = "display:none";
         // #endregion
 
         // #region adds the animations
-        let 
-            currentValue = (180/100)*currentValueRotation,
-            nextValue = (180/100)*nextValueRotation;
 
-        radialProgressBar.style.setProperty('--current-value', `${currentValue}deg`);
-        radialProgressBar.style.setProperty('--next-value', `${nextValue}deg`);
+        //modifies of percentage to degrees
+        currentRotationValue = (180/100)*currentRotationValue,
+        nextRotationValue = (180/100)*nextRotationValue;
 
-        mask1.classList.add("update-radial-progress-bar");
-        fulls.forEach(full => full.classList.add("update-radial-progress-bar"));
+        radialProgressBar.style.setProperty('--current-rotation-value', `${currentRotationValue}deg`);
+        radialProgressBar.style.setProperty('--next-rotation-value', `${nextRotationValue}deg`);
 
-        await delay(500);
-        mask1.classList.remove("update-radial-progress-bar");
-        fulls.forEach(full => full.classList.remove("update-radial-progress-bar"));
+        fullMask.classList.add("update-radial-progress-bar");
+        full.classList.add("update-radial-progress-bar");
+        half.classList.add("update-radial-progress-bar");
+
+        try {
+            const removeClassList = async () => {
+                await delay(300);
+                fullMask.classList.remove("update-radial-progress-bar");
+                full.classList.remove("update-radial-progress-bar");
+                half.classList.remove("update-radial-progress-bar");
+            }
+            removeClassList();
+        } catch (error) {
+            return;
+        };
         // #endregion
     };
 })();

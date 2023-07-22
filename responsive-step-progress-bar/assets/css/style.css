@@ -4,26 +4,49 @@
     bottom: 55%;
 }
 
+/* #region Desktop Step Progress Bar */
+.checked i {
+    background-color: #198754;
+    animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.checking i {
+    background-color: #ffc107;
+    transition-delay: .3s;
+    transition-property: background-color;
+
+    animation: increase-scale .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.unchecked i {
+    background-color: #6c757d;
+    animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+/* #endregion */
+
 /* #region Mobile Step Progress Bar */
 #radial-wrap,
-#mask-1,
-#mask-2,
-.full {
+#full-mask,
+#half-mask,
+#full,
+#half {
     width: 80px;
     height: 80px;
 }
 
-#mask-1,
-#mask-2 {
+#full-mask,
+#half-mask {
     clip: rect(0px, 80px, 80px, 40px);
 }
 
-#mask-1,
-.full {
-    transform: rotate(var(--next-value));
+#full-mask,
+#full,
+#half {
+    transform: rotate(var(--next-rotation-value));
 }
 
-.full {
+#full,
+#half {
     clip: rect(0px, 40px, 80px, 0px);
 }
 
