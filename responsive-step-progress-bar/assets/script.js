@@ -65,7 +65,7 @@
     animateStepProgressBar();
 
     function updateMobileProgressBar(currentContentNumber, currentRotationValue, nextRotationValue) {
-        // #region Updates the values
+        // #region updates the values
         const 
             steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
             nextStepContent = document.querySelector("#next-step-content"),
@@ -94,23 +94,23 @@
         radialProgressBar.style.setProperty('--current-rotation-value', `${currentRotationValue}deg`);
         radialProgressBar.style.setProperty('--next-rotation-value', `${nextRotationValue}deg`);
 
-        if (!fullMask.classList.contains("update-radial-progress-bar-1")) {
-            fullMask.classList.remove("update-radial-progress-bar-2");
-            full.classList.remove("update-radial-progress-bar-2");
-            half.classList.remove("update-radial-progress-bar-2");
+        if (!fullMask.classList.contains("animate-radial-progress-bar-1")) {
+            fullMask.classList.remove("animate-radial-progress-bar-2");
+            full.classList.remove("animate-radial-progress-bar-2");
+            half.classList.remove("animate-radial-progress-bar-2");
 
-            fullMask.classList.add("update-radial-progress-bar-1");
-            full.classList.add("update-radial-progress-bar-1");
-            half.classList.add("update-radial-progress-bar-1");
+            fullMask.classList.add("animate-radial-progress-bar-1");
+            full.classList.add("animate-radial-progress-bar-1");
+            half.classList.add("animate-radial-progress-bar-1");
         } 
         else {
-            fullMask.classList.remove("update-radial-progress-bar-1");
-            full.classList.remove("update-radial-progress-bar-1");
-            half.classList.remove("update-radial-progress-bar-1");
+            fullMask.classList.remove("animate-radial-progress-bar-1");
+            full.classList.remove("animate-radial-progress-bar-1");
+            half.classList.remove("animate-radial-progress-bar-1");
 
-            fullMask.classList.add("update-radial-progress-bar-2");
-            full.classList.add("update-radial-progress-bar-2");
-            half.classList.add("update-radial-progress-bar-2");
+            fullMask.classList.add("animate-radial-progress-bar-2");
+            full.classList.add("animate-radial-progress-bar-2");
+            half.classList.add("animate-radial-progress-bar-2");
         }
         // #endregion
     };

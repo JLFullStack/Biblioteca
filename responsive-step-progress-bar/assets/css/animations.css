@@ -19,7 +19,7 @@
     }
 }
 
-@keyframes update-radial-progress-bar-1 {
+@keyframes animate-radial-progress-bar-1 {
     0% {
         transform: rotate(var(--current-rotation-value));
     }
@@ -28,7 +28,7 @@
     }
 }
 
-@keyframes update-radial-progress-bar-2 {
+@keyframes animate-radial-progress-bar-2 {
     0% {
         transform: rotate(var(--current-rotation-value));
     }
@@ -47,11 +47,11 @@
     animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-.update-radial-progress-bar-1 {
-    animation: update-radial-progress-bar-1 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+.animate-radial-progress-bar-1 {
+    animation: animate-radial-progress-bar-1 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-.update-radial-progress-bar-2 {
-    animation: update-radial-progress-bar-2 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+.animate-radial-progress-bar-2 {
+    animation: animate-radial-progress-bar-2 .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 /* #endregion */
