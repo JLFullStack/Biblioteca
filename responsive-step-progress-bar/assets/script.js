@@ -14,7 +14,7 @@
             desktopProgressBarValue = parseInt(desktopProgressBar.style.width.replace("%", ""));
 
         updateMobileProgressBar(currentContentNumber, currentRotationValue, nextRotationValue); //adds the initial values
- 
+
         btnNext.addEventListener("click", () => {
             const 
                 currentStep = [...steps].filter(step => step.classList.contains("checking"))[0],
@@ -36,7 +36,7 @@
                                     currentRotationValue = nextRotationValue, 
                                     nextRotationValue += 100/(steps.length));
         });
- 
+
         btnPrevious.addEventListener("click", () => {
             const 
                 currentStep = [...steps].filter(step => step.classList.contains("checking"))[0],
