@@ -1,16 +1,15 @@
 .progress {
-    width: 60%;
     height: 4px;
-    bottom: 55%;
+    top: 46px;
 }
 
 /* #region Desktop Step Progress Bar */
-.checked i {
+.progress-bar-step.checked i {
     background-color: #198754;
     animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-.checking i {
+.progress-bar-step.checking i {
     background-color: #ffc107;
     transition-delay: .3s;
     transition-property: background-color;
@@ -18,7 +17,7 @@
     animation: increase-scale .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
 
-.unchecked i {
+.progress-bar-step.unchecked i {
     background-color: #6c757d;
     animation: decrease-scale .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }

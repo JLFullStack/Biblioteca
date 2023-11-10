@@ -3,7 +3,8 @@
 
     const animateStepProgressBar = () => {
         const 
-            steps = document.querySelectorAll("#desktop-step-progress-bar ol li"),
+            steps = document.querySelectorAll("#desktop-step-progress-bar .progress-bar-step"),
+            progressBar = document.querySelector ("#desktop-step-progress-bar .progress"),
             desktopProgressBar = document.querySelector("#progress-bar"),
             btnPrevious = document.querySelector("#progress-buttons #btn-previous"),
             btnNext = document.querySelector("#progress-buttons #btn-next");
@@ -12,6 +13,9 @@
             currentRotationValue = 0,
             nextRotationValue = 100/(steps.length),
             desktopProgressBarValue = parseInt(desktopProgressBar.style.width.replace("%", ""));
+
+        steps.forEach(step => step.style.width = `${100 / steps.length}%`); //defines the steps width 
+        progressBar.style.width = `${100 - 100 / steps.length}%`; //defines the progress bar width
 
         updateMobileProgressBar(currentContentNumber, currentRotationValue, nextRotationValue); //adds the initial values
 
