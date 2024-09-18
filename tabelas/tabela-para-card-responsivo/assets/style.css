@@ -1,0 +1,34 @@
+:root  {
+    --cor-padrao:#662483;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+
+table {
+    background-color: transparent;
+    overflow-x:auto;
+}
+
+table > thead > tr > th {
+    background-color: #662483 !important;
+}
+
+.bi-three-dots-vertical {
+    color: var(--cor-padrao);
+}
+
+.dropdown ul {
+    border-color: var(--cor-padrao);
+}

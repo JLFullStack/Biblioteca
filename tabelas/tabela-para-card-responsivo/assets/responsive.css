@@ -1,0 +1,72 @@
+:root {
+    --cor-padrao: #662483;
+}
+
+@media only screen and (min-width: 768px) {
+
+    table>thead,
+    table>tbody {
+        border: solid 2px #662483;
+    }
+
+    table > tbody > tr:nth-child(even) > td {
+        background-color: #f8f3fb !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    table thead,
+    table colgroup {
+        display: none;
+    }
+
+    table tbody {
+        display: flex;
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table tbody tr {
+        position: relative;
+        width: calc(100% - 0px) !important;
+        border: 2px solid var(--cor-padrao) !important;
+        margin: 0;
+    }
+
+    table tbody tr,
+    table tbody td {
+        display: block;
+        border: 0;
+        border-radius: 5px;
+    }
+
+    table tbody td {
+        text-align: left !important;
+        box-shadow: none !important;
+        padding: 0px !important;
+        min-width: max-content;
+        line-height: 3rem;
+    }
+
+    table tbody td:before {
+        content: attr(data-name);
+        min-width: max-content;
+        width: 150px;
+        display: inline-block;
+        text-transform: capitalize;
+        font-weight: normal;
+        background-color: var(--cor-padrao);
+        margin-right: 5px;
+        padding: 0px 5px;
+        color: white;
+    }
+
+    table tbody td.acao-tabela {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background-color: transparent !important;
+    }
+}
