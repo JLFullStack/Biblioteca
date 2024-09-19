@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Custom Sidebar Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+</head>
+<body style="margin-left: 48px" class="bg-body-tertiary">
+
+    <sidebar style="top: 0px;">
+        <sidebar-content>
+            <sidebar-link name="Home" asp-action="Index" asp-controller="Home" icon-class="bi-house-fill"></sidebar-link>
+            <sidebar-link name="Privacy" asp-action="Privacy" asp-controller="Home" icon-class="bi-info-circle-fill"></sidebar-link>
+            <sidebar-link name="About Us" href="#" icon-class="bi-info-circle-fill"></sidebar-link>
+            <sidebar-link name="Blog" href="#" icon-class="bi-pencil-fill"></sidebar-link>
+            <sidebar-link name="FAQ" href="#" icon-class="bi-question-circle-fill"></sidebar-link>
+            <sidebar-link name="Testimonials" href="#" icon-class="bi-star-fill"></sidebar-link>
+            <sidebar-link name="Shop" href="#" icon-class="bi-cart-fill"></sidebar-link>
+
+            <sidebar-dropdown name="News" icon-class="bi-newspaper">
+                <sidebar-link name="Latest News" href="#"></sidebar-link>
+                <sidebar-link name="World News" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+            <sidebar-dropdown name="Portfolio" icon-class="bi-book-fill">
+                <sidebar-link name="Web Design" href="#"></sidebar-link>
+                <sidebar-link name="Graphic Design" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+            <sidebar-dropdown name="Team" icon-class="bi-person-fill">
+                <sidebar-link name="Management" href="#"></sidebar-link>
+                <sidebar-link name="Developers" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+            <sidebar-dropdown name="Events" icon-class="bi-calendar-fill">
+                <sidebar-link name="Upcoming Events" href="#"></sidebar-link>
+                <sidebar-link name="Past Events" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+            <sidebar-dropdown name="Nested dropdown" icon-class="bi-list">
+                <sidebar-link name="First" href="#"></sidebar-link>
+                <sidebar-link name="Another option" href="#"></sidebar-link>
+                <sidebar-dropdown name="Dropdown">
+                    <sidebar-link name="Some link" href="#"></sidebar-link>
+                    <sidebar-link name="Some another link" href="#"></sidebar-link>
+                    <sidebar-dropdown name="Another dropdown">
+                        <sidebar-link name="And here is another one" href="#"></sidebar-link>
+                        <sidebar-link name="And another one" href="#"></sidebar-link>
+                        <sidebar-link name="More stuff here" href="#"></sidebar-link>
+                        <sidebar-link name="Some more options over here" href="#"></sidebar-link>
+                        <sidebar-link name="Option 1" href="#"></sidebar-link>
+                        <sidebar-link name="Option 2" href="#"></sidebar-link>
+                    </sidebar-dropdown>
+                </sidebar-dropdown>
+            </sidebar-dropdown>
+
+            <sidebar-dropdown name="Contact Us" icon-class="bi-telephone-fill">
+                <sidebar-link name="General Inquiry" href="#"></sidebar-link>
+                <sidebar-link name="Support" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+            <sidebar-link name="Support" href="#" icon-class="bi-headset"></sidebar-link>
+            <sidebar-link name="Downloads" href="#" icon-class="bi-cloud-download-fill"></sidebar-link>
+            <sidebar-link name="Events" href="#" icon-class="bi-calendar-fill"></sidebar-link>
+
+            <sidebar-dropdown name="Social Media" icon-class="bi-instagram">
+                <sidebar-link name="Facebook" href="#"></sidebar-link>
+                <sidebar-link name="Twitter" href="#"></sidebar-link>
+                <sidebar-link name="LinkedIn" href="#"></sidebar-link>
+                <sidebar-link name="Instagram" href="#"></sidebar-link>
+            </sidebar-dropdown>
+
+        </sidebar-content>
+        <sidebar-footer>
+            <sidebar-link name="User" href="#" icon-class="bi-person-fill"></sidebar-link>
+        </sidebar-footer>
+    </sidebar>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/js/sidebar.min.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
