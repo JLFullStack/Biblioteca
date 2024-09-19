@@ -4,34 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabela Responsiva</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="vendor/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/icons/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.6/css/dataTables.bootstrap5.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body class="d-flex flex-column">
-    <header class="container-fluid py-5 bg-secondary"></header>
-    
+    <header class="container-fluid py-5 bg-dark"></header>
+
     <main class="my-5">
-        <div class="container-fluid">
-            <table id="lote" class="table">
+        <div class="container">
+            <table id="lote" class="table table-sm">
                 <thead>
                     <tr>
                         <th class="text-white text-start py-3">Novins</th>
-                        <th class="text-white py-3">Logradouro</th>
-                        <th class="text-white py-3">Número Oficial</th>
-                        <th class="text-white py-3">Área Total M²</th>
-                        <th class="text-white py-3">Testada</th>
-                        <th class="text-white py-3">Descrição do Local</th>
-                        <th class="text-white py-3">Top ID</th>
-                        <th class="text-white py-3">Gleba</th>
-                        <th class="text-white py-3">Ação</th>
+                        <th class="text-white py-3 text-center">Logradouro</th>
+                        <th class="text-white py-3 text-center">Número Oficial</th>
+                        <th class="text-white py-3 text-center">Área Total M²</th>
+                        <th class="text-white py-3 text-center">Testada</th>
+                        <th class="text-white py-3 text-center">Descrição do Local</th>
+                        <th class="text-white py-3 text-center">Top ID</th>
+                        <th class="text-white py-3 text-center">Gleba</th>
+                        <th class="text-white py-3 text-end">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,17 +43,24 @@
                         <td data-name="Testada" class="text-md-center border-0">4,0000</td>
                         <td data-name="Descrição do Local" class="text-md-center border-0">TESTE</td>
                         <td data-name="Top ID" class="text-md-center border-0">5</td>
-                        <td data-name="Gleba" class="border-0"><span class="badge text-bg-primary">SIM</span></td>
-                        <td class="acao-tabela border-0">
-                            <div class="btn-group dropdown">
-                                <i class="bi bi-three-dots-vertical fs-3 me-2" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false"></i>
+                        <td data-name="Gleba" class="border-0 text-md-center">
+                            <span class="badge bg-primary">SIM</span>
+                        </td>
+
+                        <td class="acao-tabela border-0 text-center">
+                            <div class="btn-group dropstart">
+                                <i class="bi bi-three-dots-vertical fs-4 me-2 me-md-0" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu dropdown-menu-end p-0 border-2">
-                                    <li class="mb-2 text-end">
-                                        <button class="btn btn-sm" title="Histórico"><i class="bi bi-stopwatch-fill fs-2"></i></button>
+                                    <li class="text-end my-1 mx-2">
+                                        <button class="btn p-1" title="Histórico">
+                                            <i class="bi bi-stopwatch-fill fs-2"></i>
+                                        </button>
                                     </li>
-                                    <li class="text-end">
-                                        <button class="btn" title="Editar"><i class="bi bi-pencil-square fs-2"></i></button>
+                                    <li class="text-end mb-1 mx-2">
+                                        <button class="btn p-1" title="Editar">
+                                            <i class="bi bi-pencil-square fs-2"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -68,17 +75,24 @@
                         <td data-name="Testada" class="text-md-center border-0">4,0000</td>
                         <td data-name="Descrição do Local" class="text-md-center border-0">TESTE</td>
                         <td data-name="Top ID" class="text-md-center border-0">5</td>
-                        <td data-name="Gleba" class="border-0"><span class="badge text-bg-secondary border-0">NÃO</span></td>
-                        <td class="acao-tabela border-0">
-                            <div class="btn-group dropdown">
-                                <i class="bi bi-three-dots-vertical fs-3 me-2" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false"></i>
+                        <td data-name="Gleba" class="border-0 text-md-center">
+                            <span class="badge text-bg-secondary border-0">NÃO</span>
+                        </td>
+
+                        <td class="acao-tabela border-0 text-center">
+                            <div class="btn-group dropstart">
+                                <i class="bi bi-three-dots-vertical fs-4 me-2 me-md-0" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu dropdown-menu-end p-0 border-2">
-                                    <li class="mb-2 text-end">
-                                        <button class="btn btn-sm" title="Histórico"><i class="bi bi-stopwatch-fill fs-2"></i></button>
+                                    <li class="text-end my-1 mx-2">
+                                        <button class="btn p-1" title="Histórico">
+                                            <i class="bi bi-stopwatch-fill fs-2"></i>
+                                        </button>
                                     </li>
-                                    <li class="text-end">
-                                        <button class="btn" title="Editar"><i class="bi bi-pencil-square fs-2"></i></button>
+                                    <li class="text-end mb-1 mx-2">
+                                        <button class="btn p-1" title="Editar">
+                                            <i class="bi bi-pencil-square fs-2"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -93,17 +107,24 @@
                         <td data-name="Testada" class="text-md-center border-0">4,0000</td>
                         <td data-name="Descrição do Local" class="text-md-center border-0">TESTE</td>
                         <td data-name="Top ID" class="text-md-center border-0">5</td>
-                        <td data-name="Gleba" class="border-0"><span class="badge text-bg-secondary border-0">NÃO</span></td>
-                        <td class="acao-tabela border-0">
-                            <div class="btn-group dropdown">
-                                <i class="bi bi-three-dots-vertical fs-3 me-2" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false"></i>
+                        <td data-name="Gleba" class="border-0 text-md-center">
+                            <span class="badge text-bg-secondary border-0">NÃO</span>
+                        </td>
+
+                        <td class="acao-tabela border-0 text-center">
+                            <div class="btn-group dropstart">
+                                <i class="bi bi-three-dots-vertical fs-4 me-2 me-md-0" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"></i>
                                 <ul class="dropdown-menu dropdown-menu-end p-0 border-2">
-                                    <li class="mb-2 text-end">
-                                        <button class="btn btn-sm" title="Histórico"><i class="bi bi-stopwatch-fill fs-2"></i></button>
+                                    <li class="text-end my-1 mx-2">
+                                        <button class="btn p-1" title="Histórico">
+                                            <i class="bi bi-stopwatch-fill fs-2"></i>
+                                        </button>
                                     </li>
-                                    <li class="text-end">
-                                        <button class="btn" title="Editar"><i class="bi bi-pencil-square fs-2"></i></button>
+                                    <li class="text-end mb-1 mx-2">
+                                        <button class="btn p-1" title="Editar">
+                                            <i class="bi bi-pencil-square fs-2"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -114,7 +135,7 @@
         </div>
     </main>
 
-    <footer class="w-100 py-5 bg-secondary"></header>
+    <footer class="w-100 py-5 bg-dark"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -130,9 +151,7 @@
     <script src="https://cdn.datatables.net/2.1.6/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.1.6/js/dataTables.bootstrap5.js"></script>
 
-    <script>
-        new DataTable('#lote');
-    </script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

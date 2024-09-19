@@ -1,15 +1,15 @@
 :root {
-    --cor-padrao: #662483;
+    --financas: #662483;
 }
 
 @media only screen and (min-width: 768px) {
 
     table>thead,
     table>tbody {
-        border: solid 2px #662483;
+        border: solid 2px var(--financas);
     }
 
-    table > tbody > tr:nth-child(even) > td {
+    table>tbody>tr:nth-child(even)>td {
         background-color: #f8f3fb !important;
     }
 }
@@ -30,21 +30,18 @@
 
     table tbody tr {
         position: relative;
-        width: calc(100% - 0px) !important;
-        border: 2px solid var(--cor-padrao) !important;
+        border: 2px solid var(--financas) !important;
         margin: 0;
     }
 
     table tbody tr,
     table tbody td {
         display: block;
-        border: 0;
         border-radius: 5px;
     }
 
     table tbody td {
         text-align: left !important;
-        box-shadow: none !important;
         padding: 0px !important;
         min-width: max-content;
         line-height: 3rem;
@@ -55,9 +52,7 @@
         min-width: max-content;
         width: 150px;
         display: inline-block;
-        text-transform: capitalize;
-        font-weight: normal;
-        background-color: var(--cor-padrao);
+        background-color: var(--financas);
         margin-right: 5px;
         padding: 0px 5px;
         color: white;

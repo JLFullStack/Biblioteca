@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --financas: #662483;
+    --financas-hover: #4e1d63;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* #region tabela */
+
+table {
+    overflow-x: auto;
+}
+
+table>thead>tr>th,
+.bg-financas {
+    background-color: var(--financas) !important;
+}
+
+.bi-three-dots-vertical {
+    color: var(--financas);
+}
+
+table>tbody>tr>td>.btn-group ul {
+    border-color: var(--financas);
+    min-width: auto;
+}
+
+table>tbody>tr>td>.btn-group ul>li {
+    width: fit-content;
+}
+
+.pagination .page-link {
+    color: black;
+}
+
+.pagination>.active>.page-link {
+    color: white;
+    background-color: var(--financas);
+    border: 1px solid var(--financas);
+}
+
+.pagination>.active>.page-link:hover {
+    color: white;
+    background-color: var(--financas-hover);
+    border: 1px solid var(--financas-hover);
+}
+
+/* #endregion tabela */
